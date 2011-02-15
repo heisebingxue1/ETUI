@@ -8,8 +8,11 @@
     
     3. Use existing functional css class, such as et-clr.
     
-    4. Symantically correct class name, for example, when element is activated,
-    it should has class name such as et-active
+    4. Use semantically correct class name, for example, when element is activated,
+    the class name that gives element highlight style should be et-active
+
+    5. Put '/* + Module Name - Begin */' before module block starts,
+    /* - Module Name - End */ after module block ends.
 
 2. iOS compatibilities
     
