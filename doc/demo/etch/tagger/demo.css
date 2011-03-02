@@ -1,0 +1,66 @@
+.featureEnabled {
+  background-color: #24b11d;
+}
+.features .feature-name {
+  width: 160px;
+}
+.features th.feature-name {
+  background-color: transparent;
+}
+.features td.feature-name {
+  text-align: center;
+}
+.features td.feature-status {
+  background-color: #e00c0c;
+}
+html.msie .features #status-msie {
+  background-color: #24b11d;
+}
+html.webkit .features #status-webkit {
+  background-color: #24b11d;
+}
+html.mozilla .features #status-mozilla {
+  background-color: #24b11d;
+}
+html.opera .features #status-opera {
+  background-color: #24b11d;
+}
+html.html5browser .features #status-html5 {
+  background-color: #24b11d;
+}
+html.non-msie .features #status-nonmsie {
+  background-color: #24b11d;
+}
+html.non-msie6-msie7 .features #status-nonmsie67 {
+  background-color: #24b11d;
+}
+html.non-webkit .features #status-nonwebkit {
+  background-color: #24b11d;
+}
+html.non-opera .features #status-nonopera {
+  background-color: #24b11d;
+}
+html.non-mozilla .features #status-nonmozilla {
+  background-color: #24b11d;
+}
+html.non-html5browser .features #status-nonhtml5 {
+  background-color: #24b11d;
+}
+html.win .features #status-win {
+  background-color: #24b11d;
+}
+html.mac .features #status-mac {
+  background-color: #24b11d;
+}
+html.linux .features #status-linux {
+  background-color: #24b11d;
+}
+html.ios .features #status-ios {
+  background-color: #24b11d;
+}
+html.iphone .features #status-iphone {
+  background-color: #24b11d;
+}
+html.ipad .features #status-ipad {
+  background-color: #24b11d;
+}

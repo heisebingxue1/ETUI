@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tagger demostration</title>
+    <link rel="stylesheet" type="text/css" href="demo.css" />
+    
+    <!-- tagger should be placed in <head /> in order to load it earlier -->
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'></script>
+    <script type='text/javascript' src='../../../../lib/etch.js'></script>
+    <script type='text/javascript' src='../../../../lib/etch/tagger.js'></script>
+    <script type='text/javascript'>
+        etch.tagger.tag();
+    </script>
+</head>
+<body>
+    <p>
+    etch.tagger.tag() enable the ability to targeting browser, platform 
+    or even features by using css.
+    </p>
+    <p>
+    <h2>Tags & feature detection sample</h2>
+    below is a table shows current browser status, the 
+    highlighting is controlled by css 
+    (<a href='./demo.css'>click here to view the css</a>).
+    <table id='mainFeatureTable' class='features'>
+        <colgroup>
+            <col class='feature-name'></col>
+            <col class='feature-status'></col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th class='feature-title'>Feature Name</th>
+                <th class='feature-title'>Status in Current Browser</th>
+            </tr>
+        </thead>
+        <tfoot>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td class='feature-name'>MSIE</td>
+                <td id='status-msie' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>Webkit</td>
+                <td id='status-webkit' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>mozilla</td>
+                <td id='status-mozilla' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>opera</td>
+                <td id='status-opera' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>non-msie</td>
+                <td id='status-nonmsie' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>non-msie6-msie7</td>
+                <td id='status-nonmsie67' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>non-webkit</td>
+                <td id='status-nonwebkit' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>non-mozilla</td>
+                <td id='status-nonmozilla' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>non-opera</td>
+                <td id='status-nonopera' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>html5 browser</td>
+                <td id='status-html5' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>non html5 browser</td>
+                <td id='status-nonhtml5' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>Mac</td>
+                <td id='status-mac' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>Win</td>
+                <td id='status-win' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>Linux</td>
+                <td id='status-linux' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>ios</td>
+                <td id='status-ios' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>iphone</td>
+                <td id='status-iphone' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td class='feature-name'>ipad</td>
+                <td id='status-ipad' class='feature-status'></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    </p>
+    
+    <p>
+        <h2>More tags</h2>
+        <h3>browser version detection</h3>
+        browser alias + major version
+        
+        <h3>etown specific tags</h3>
+        
+        et-lng-ctr <br />
+        et-lng-lng <br />
+        et-lng-rtl  right-to-left text detection <br />
+        et-lng-non-rtl  <br />
+        et-lng-asian  <br />
+        et-lng-non-asian
+    </p>
+</body>
+</html>
