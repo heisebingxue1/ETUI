@@ -1,0 +1,1 @@
+node  ../../../../etc/lessc ./demo.less > ./demo.css
