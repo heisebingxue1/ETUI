@@ -116,7 +116,7 @@
     
     * DOM
     
-        1. All DOM operation (except operatoin on `<html />`) should be executed when/after DOM Ready.
+        1. All in-tree DOM operation (except operatoin on `<html />`) should be executed when/after DOM Ready.
 
 2. Only functional CSS classes or HTMLs are allowed in JavaScript Code. Let's say:
     
