@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+#Define Paths
+pathRoot=`dirname $0`/../../../
+pathBin=$pathRoot'etc/'
+pathOut=$pathRoot'out/'
+pathLegacy=$pathOut'legacy/'
+
+#Define binaries
+binLessc=$pathBin'lessc'
+
+#Build salespage css
+
+if [ -d $pathLegacy ]
+then
+    echo legacy directory found.
+else
+    echo creating legacy directory
+    mkdir $pathLegacy
+fi
+    
+echo building css
+node $binLessc --input sp.less > $pathLegacy'sp.css'
+node $binLessc --input sp.rtl.less > $pathLegacy'sp.rtl.css'
