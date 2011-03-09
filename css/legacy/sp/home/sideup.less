@@ -6,23 +6,46 @@
     overflow: hidden; 
     z-index: 99999; 
     text-align: left; 
+    h6 { color: #d9dadb; font-weight: bold; font-size: 14px; line-height: 20px; }
+    p 
+    { 
+        color:#d9dadb; font-size: 12px; line-height: 16px; 
+        a { text-decoration: underline; color:#d9dadb; }
+        a:hover { color:#c7c8c9; }
+    }
+    #et-sideup-bg 
+    { 
+        height: 97px;
+        img { width: 100%; }
+    }
+    #et-sideup-content-wrapper { 
+        position: relative; 
+        top: -85px; 
+        width: 750px; 
+        margin: 0 auto; 
+        .et-sideup-box { width: 330px; height: 85px; overflow: hidden; }
+        #et-sideup-box-left { float: left; }
+        #et-sideup-box-right { float: right; }
+        .et-sideup-box 
+        {
+            .et-sideup-logo
+            { 
+                float: left; width: 50px; height: 50px;
+                margin-right: 10px; overflow: hidden; 
+            }
+            .et-siteup-description { float: left; width: 270px; }
+        }
+    }
+    #et-sideup-close 
+    { 
+        position: absolute; 
+        top: 16px; 
+        right: 16px; 
+        background-repeat: no-repeat; 
+        color: #d9dadb;
+        cursor: pointer; 
+        img { margin-right: 5px;}
+    }
+    
 }
-#et-sideup-bg { height: 97px; }
-#et-sideup-bg img { width: 100%; }
-#et-sideup-content-wrapper { 
-    position: relative; 
-    top: -85px; 
-    width: 750px; 
-    margin: 0 auto; 
-}
-#et-sideup-content-wrapper .et-sideup-box { width: 330px; height: 85px; overflow: hidden; }
-#et-sideup-content-wrapper #et-sideup-box-left { float: left; }
-#et-sideup-content-wrapper #et-sideup-box-right { float: right; }
-#et-sideup-content-wrapper .et-sideup-box .et-sideup-logo { float: left; width: 50px; height: 50px; margin-right: 10px; overflow: hidden; }
-#et-sideup-content-wrapper .et-sideup-box .et-siteup-description { float: left; width: 270px; }
-#et-sideup h6 { color: #d9dadb; font-weight: bold; font-size: 14px; line-height: 20px; }
-#et-sideup p { color:#d9dadb; font-size: 12px; line-height: 16px; }
-#et-sideup p a { text-decoration: underline; color:#d9dadb; }
-#et-sideup p a:hover { color:#c7c8c9; }
-#et-sideup-close { :last-childposition: absolute; top: 16px; right: 16px; background-repeat: no-repeat; color: #d9dadb; cursor: pointer; }
-#et-sideup-close img { margin-right: 5px;}
+
