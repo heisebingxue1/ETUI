@@ -1,0 +1,51 @@
+/* 
+cssframework://legacy/sp/home/startguide.less 
+
+startguide on homepage (the steps)
+*/
+#et_home_start
+{
+    margin: 20px 0 0 0; height:300px;
+    h2
+    {
+        font-size: 22px; font-weight:normal; padding:10px 30px;
+    }
+    #et_home_start_items{ position:relative;}
+}
+
+.et_home_start_item { position:absolute;}
+.et_home_start_item_1{ left:7px; top:20px; background: url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -12px -516px; height: 204px; width: 283px; }
+.et_home_start_item_1:hover, .et_home_start_item_1_hover{ background-position: -372px -516px;}
+* html .et_home_start_item_1{background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+.et_home_start_item_2{ left:243px; top:20px; background: url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -12px -732px; height: 204px; width: 324px; }
+.et_home_start_item_2:hover, .et_home_start_item_2_hover { background-position: -372px -732px;}
+* html .et_home_start_item_2{background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+.et_home_start_item_3{ left:519px; top:20px; background: url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -12px -948px; height: 204px; width: 284px; }
+.et_home_start_item_3:hover, .et_home_start_item_3_hover { background-position: -372px -948px;}
+* html .et_home_start_item_3{background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+
+.et_home_start_item_icon{ position:absolute; top:-15px;}
+
+.et_home_start_item_1 .et_home_start_item_icon{ left:18px;}
+.et_home_start_item_2 .et_home_start_item_icon{ left:52px;}
+.et_home_start_item_3 .et_home_start_item_icon{ left:67px;}
+
+.et_home_start_item_1 .et_home_start_item_content{ margin:125px 60px 0 40px;}
+.et_home_start_item_2 .et_home_start_item_content{ margin:125px 60px 0 70px;}
+.et_home_start_item_3 .et_home_start_item_content{ margin:125px 30px 0 70px;}
+
+.et_home_start_item_content {font-size: 12px; }
+    /* font size on ios will overall larger than the one in pc or mac, iOS sucks */
+    .ios .et_home_start_item_content {font-size: 10px; }
+    
+    .et_home_start_item_content h3{color:#318fb5; font-size:16px; padding:5px 0;}
+        .ios .et_home_start_item_content h3{ font-size:14px;}
+
+.ios .et_home_start_item_content a { font-size: 10px; }        
+.et_home_start_item_content a:hover{text-decoration:none}
+.et_home_start_item_content a:link {color:#666; text-decoration:none;}
+
+.et_home_start_item_icon_inner { overflow:hidden; height:180px; }
+.et_home_start_item_1 .et_home_start_item_icon_inner img { margin:0 0 0 0; }
+.et_home_start_item_2 .et_home_start_item_icon_inner img { margin:-200px 0 0 0; }
+.et_home_start_item_3 .et_home_start_item_icon_inner img { margin:-400px 0 0 0; }

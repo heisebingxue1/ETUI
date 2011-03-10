@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 #Define Paths
-pathRoot=`dirname $0`/../../../
+pathRoot=`dirname $0`/../../
 pathBin=$pathRoot'etc/'
 pathOut=$pathRoot'out/'
 pathLegacy=$pathOut'legacy/'
