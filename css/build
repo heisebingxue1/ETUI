@@ -1,0 +1,43 @@
+#!/usr/bin/bash
+
+#Define Paths
+pathRoot=`dirname $0`/../
+pathBin=$pathRoot'etc/'
+pathOut=$pathRoot'out/'
+pathLegacy=$pathOut'legacy/'
+pathEtui=$pathOut'etui/'
+
+#Define binaries
+binLessc=$pathBin'lessc'
+
+#Constants
+DEFAULT_ENTRY=etui
+
+source=$DEFAULT_ENTRY
+
+if [ $# -ge 1 ]
+then
+    source=`dirname $0`'/'$1
+fi
+
+target=$pathOut$source
+
+#Build salespage css
+
+echo Source:        $source
+echo Source Path:   `dirname $source`'/'
+echo Target:        $target
+
+if [ -d `dirname $target` ]
+then
+    echo releasing directory found
+    # TODO optionally recreate directory --clean
+else
+    echo creating releasing directory
+    # create parent directory also
+    mkdir -p `dirname $target`
+fi
+    
+echo building css
+node $binLessc --input $source.less > $target'.css'
+node $binLessc --input $source.rtl.less > $target'.rtl.css'
