@@ -1,0 +1,52 @@
+/* 
+cssframework://etui/legacy/sp/home/billboard.less
+*/
+
+
+html 
+{
+    /**
+     * Define Variables 
+     */
+    @pathOrangeBtn: url(#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange.png);
+    @pathOrangeBtnIE6: url(#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange_ie6.png);
+
+    .et_home_billboard_item_content
+    {
+        .et_btn_orange
+        {
+            .et_btn_l 
+            {
+                background-image: @pathOrangeBtn; 
+                background-position: 0 0; 
+                height: 40px; width: 22px;
+            }
+            .et_btn_m 
+            {
+                background-image: @pathOrangeBtn; 
+                background-position: -22px 0; 
+                height: 40px; line-height: 36px;
+            }
+            .et_btn_r 
+            {
+                background-image: @pathOrangeBtn; 
+                background-position: -472px 0;
+                height: 40px; width: 28px;
+            }
+        }
+            
+    }
+    
+    &.msie6 
+    {
+        .et_home_billboard_item_content
+        {
+            .et_btn_orange 
+            {
+                .et_btn_l {background-image: @pathOrangeBtnIE6;}
+                .et_btn_m {background-image: @pathOrangeBtnIE6;}
+                .et_btn_r {background-image: @pathOrangeBtnIE6;}
+            }
+        }
+    }
+}

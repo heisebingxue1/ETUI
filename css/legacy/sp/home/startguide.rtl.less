@@ -3,3 +3,66 @@ cssframework://legacy/sp/home/startguide.rtl.less
 
 rtl startguide on homepage (the steps)
 */
+html.et-lng-rtl 
+{
+    .et_home_start_item_1
+    { 
+        left: auto; 
+        right:7px; 
+        background: url(#CacheSvr#/_imgs/online/sp2010/etsprite32_rtl.png) no-repeat -12px -516px; 
+    }
+    .et_home_start_item_1:hover, .et_home_start_item_1_hover 
+    { 
+        background-position: -372px -516px;
+    }
+
+    .et_home_start_item_2
+    { 
+        right:243px; left: auto;
+        background: url(#CacheSvr#/_imgs/online/sp2010/etsprite32_rtl.png) no-repeat -12px -732px; 
+    }
+    .et_home_start_item_2:hover, .et_home_start_item_2_hover 
+    {
+        background-position: -372px -732px;
+    }
+
+    .et_home_start_item_3 
+    {
+        right:519px; left: auto;
+        background: url(#CacheSvr#/_imgs/online/sp2010/etsprite32_rtl.png) no-repeat -12px -948px; 
+    }
+    .et_home_start_item_3:hover, .et_home_start_item_3_hover 
+    {
+        background-position: -372px -948px;
+    }
+
+    .et_home_start_item_1
+        .et_home_start_item_icon { right: 18px; left: auto; }
+        
+    .et_home_start_item_2
+        .et_home_start_item_icon { right: 52px; left: auto; }
+        
+    .et_home_start_item_3
+        .et_home_start_item_icon { right: 67px; left: auto; }
+
+    .et_home_start_item_1 .et_home_start_item_content
+    {
+        margin-left: 60px; 
+        margin-right: 40px;
+    }
+    .et_home_start_item_2 .et_home_start_item_content
+    {
+        margin-left: 60px; 
+        margin-right: 70px;
+    }
+    .et_home_start_item_3 .et_home_start_item_content
+    {
+        margin-left: 30px; 
+        margin-right: 70px;
+    }
+}
+/* msie6 */
+* html.et-lng-rtl
+{
+    .et_home_start_item { background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8_rtl.png);}
+}

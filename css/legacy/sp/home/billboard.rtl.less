@@ -1,0 +1,56 @@
+/* 
+cssframework://etui/legacy/sp/home/billboard.rtl.less
+*/
+
+html.et-lng-rtl
+{
+    /**
+     * Define Variables 
+     */
+    @pathOrangeBtnRtl: url("#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange.rtl.png");
+    
+    .et_home_billboard_item_content
+    {
+        .et_btn_orange
+        {
+            float: right;
+            .et_btn_l 
+            {
+                background-image: @pathOrangeBtnRtl; 
+                background-position: 0 0; 
+                width: 28px;
+                float: left;
+            }
+            .et_btn_m 
+            {
+                background-image: @pathOrangeBtnRtl; 
+                background-position: -28px 0; 
+                float: left;
+            }
+            .et_btn_r 
+            {
+                background-image: @pathOrangeBtnRtl; 
+                background-position: -478px 0;
+                width: 22px;
+                float: left;
+            }
+        }
+            
+    }
+}
+    
+* html.et-lng-rtl 
+{
+    @pathOrangeBtnIE6Rtl: url("#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange_ie6.png");
+    
+    .et_home_billboard_item_content
+    {
+        .et_btn_orange 
+        {
+            .et_btn_l {background-image: @pathOrangeBtnIE6Rtl;}
+            .et_btn_m {background-image: @pathOrangeBtnIE6Rtl;}
+            .et_btn_r {background-image: @pathOrangeBtnIE6Rtl;}
+        }
+    }
+}
+

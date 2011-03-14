@@ -6,5 +6,8 @@ tree.URL = function URL(val) {
 tree.URL.prototype = {
     toCSS: function () {
         return "url(" + (this.value.toCSS ? this.value.toCSS() : this.value) + ")";
+    },
+    eval: function (ctx) {
+        return this;
     }
 };
