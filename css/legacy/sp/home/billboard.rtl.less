@@ -2,12 +2,44 @@
 cssframework://etui/legacy/sp/home/billboard.rtl.less
 */
 
-html.et-lng-rtl
+html.et-lng-rtl #et_home_billboard 
 {
-    /**
-     * Define Variables 
-     */
     @pathOrangeBtnRtl: url("#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange.rtl.png");
+    
+    .et_home_billboard_item 
+    {
+        right:1px; left: auto;
+    }
+    
+    #et_home_billboard_item_1 
+    {
+        padding-left: 0px;
+        padding-right: 440px; 
+    }
+
+    #et_home_billboard_item_2
+    {
+        padding-left: 0px;
+        padding-right: 40px;
+    }
+
+    #et_home_billboard_item_3  
+    {
+        padding-left: 0px;
+        padding-right: 77px;
+    }
+
+    #et_home_billboard_item_4  
+    {
+        padding-left: 0;
+        padding-right: 477px; 
+    }
+
+    #et_home_billboard_item_5 
+    {
+        padding-left:  0;
+        padding-right: 450px; 
+    }
     
     .et_home_billboard_item_content
     {
@@ -38,8 +70,87 @@ html.et-lng-rtl
             
     }
 }
+
+
+/* + Billboard Buttons(Tabs) - Begin */
+
+html.et-lng-rtl #et_home_billboard_tabpanel  
+{
+    right: 1px; 
+    left: auto;
+}
+
+html.et-lng-rtl #et_home_billboard_tabpanel ul li  
+{
+    float: right; 
+} 
+    /* border-left:#ABABAB 1px solid; border-right:#676767 1px solid;*/
+    /* Bordr transparency for billboard buttons */
+    /* use rgba to make the border alpha transparency in html5 browser */
+    html.et-lng-rtl.html5browser #et_home_billboard_tabpanel ul li  
+    {
+        border-right: rgba(171, 171, 171, .15) 1px solid; 
+        border-left: rgba(103, 103, 103, .8) 1px solid; 
+    }
+    /* For non html5 buttons */
+    html.et-lng-rtl #et_home_billboard_tabpanel ul li .et_home_billboard_tabbg  
+    {
+        margin-right: -1px; 
+        margin-left: auto;
+        border-right:#ABABAB 1px solid; 
+        border-left:#676767 1px solid;
+    }
+        html.et-lng-rtl.html5browser #et_home_billboard_tabpanel ul li .et_home_billboard_tabbg  
+        {
+            margin-right: 0; 
+            margin-left: auto;
+            border-left: none; 
+            border-right: none; 
+        }
+        
+    html.et-lng-rtl #et_home_billboard_tabpanel ul li .et_home_billboard_tabimg_active
+    { 
+        right:0;
+        left: auto;
+    }
     
-* html.et-lng-rtl 
+    html.et-lng-rtl #et_home_billboard_tabpanel ul li .et_home_billboard_tabimg_normal 
+    {
+        left: auto;
+        right: 0;
+    }
+
+    html.et-lng-rtl #et_home_billboard_tabpanel ul li#et_home_billboard_tab_1 
+    {
+        padding-left: 1px;
+        padding-right: 0 ; 
+    }
+        html.et-lng-rtl.html5browser 
+            #et_home_billboard_tabpanel ul li#et_home_billboard_tab_1 { border-right:none; }
+        html.et-lng-rtl #et_home_billboard_tabpanel ul li#et_home_billboard_tab_1 .et_home_billboard_tabbg  
+        {
+            border-right: none; 
+            margin-right: 0;
+            margin-left: auto;
+        }
+    
+    html.et-lng-rtl #et_home_billboard_tabpanel ul li#et_home_billboard_tab_5 
+    { 
+        padding-left: 0; padding-right: 1px; 
+    }
+        html.et-lng-rtl.html5browser 
+            #et_home_billboard_tabpanel ul li#et_home_billboard_tab_5 
+        { 
+            border-left:none; 
+        }
+        html.et-lng-rtl #et_home_billboard_tabpanel ul li#et_home_billboard_tab_5 .et_home_billboard_tabbg 
+        {
+            border-left: none;
+        }
+/* + Billboard Buttons(Tabs) - End */
+
+/* MSIE6 */    
+* html.et-lng-rtl #et_home_billboard 
 {
     @pathOrangeBtnIE6Rtl: url("#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange_ie6.png");
     

@@ -3,50 +3,234 @@ cssframework://etui/legacy/sp/home/billboard.less
 */
 
 
-html 
+#et_home_billboard 
 {
-    /**
-     * Define Variables 
-     */
-    @pathOrangeBtn: url(#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange.png);
-    @pathOrangeBtnIE6: url(#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange_ie6.png);
-
-    .et_home_billboard_item_content
+    padding:0 1px; 
+    width:808px; 
+    height:416px; 
+    overflow:hidden; 
+    position:relative;
+    
+    .et_home_billboard_item
     {
-        .et_btn_orange
+        width:808px; 
+        height:416px; 
+        position:absolute; 
+        top: 0px; 
+        left:1px; 
+        display: none; 
+        cursor: pointer;
+        
+        &:first-child{ z-index: 10; display: block; }
+        
+        .et_home_billboard_item_content 
         {
-            .et_btn_l 
+            color:#fff;
+            font-size:14px;
+            line-height:18px;
+            p 
             {
-                background-image: @pathOrangeBtn; 
-                background-position: 0 0; 
-                height: 40px; width: 22px;
+                padding:0 0 20px 0; font-size:14px; line-height:18px; 
+                a
+                {
+                    &:link
+                    {
+                        color:#fff; 
+                        text-decoration:underline; 
+                        font-size:14px;
+                    }
+                    &:visited
+                    {
+                        color:#fff; 
+                        text-decoration:underline; 
+                        font-size:14px;
+                    }
+                    &:hover
+                    {
+                        color:#fff; 
+                        text-decoration:none; 
+                        font-size:14px;
+                    }
+                    &:active
+                    {
+                        color:#fff; 
+                        text-decoration:underline; 
+                        font-size:14px;
+                    }
+                }
             }
-            .et_btn_m 
-            {
-                background-image: @pathOrangeBtn; 
-                background-position: -22px 0; 
-                height: 40px; line-height: 36px;
-            }
-            .et_btn_r 
-            {
-                background-image: @pathOrangeBtn; 
-                background-position: -472px 0;
-                height: 40px; width: 28px;
-            }
-        }
             
+            /* + Orange Button in Billboard (The larger one) - Begin */
+
+            @pathOrangeBtn: url(#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange.png);
+            .et_btn_orange
+            {
+                .et_btn_l 
+                {
+                    background-image: @pathOrangeBtn; 
+                    background-position: 0 0; 
+                    height: 40px; width: 22px;
+                }
+                .et_btn_m 
+                {
+                    background-image: @pathOrangeBtn; 
+                    background-position: -22px 0; 
+                    height: 40px; line-height: 36px;
+                }
+                .et_btn_r 
+                {
+                    background-image: @pathOrangeBtn; 
+                    background-position: -472px 0;
+                    height: 40px; width: 28px;
+                }
+            }
+            
+            /* + Orange Button in Billboard (The larger one) - End */
+            
+        }
     }
     
-    &.msie6 
+    #et_home_billboard_item_1{padding:70px 0 0 440px; width:368px; height:346px;}
+    #et_home_billboard_item_2{padding:70px 0 0 40px; width:768px; height:346px;}
+    #et_home_billboard_item_3{padding:70px 0 0 77px; width:731px; height:346px;}
+    #et_home_billboard_item_4{padding:70px 0 0 477px; width:331px; height:346px;}
+    #et_home_billboard_item_5{padding:70px 0 0 450px; width:358px; height:346px;}
+
+    #et_home_billboard_item_1 .et_home_billboard_item_content{width:322px;}
+    #et_home_billboard_item_2 .et_home_billboard_item_content{width:302px;}
+    #et_home_billboard_item_3 .et_home_billboard_item_content{width:344px;}
+    #et_home_billboard_item_4 .et_home_billboard_item_content{width:310px;}
+    #et_home_billboard_item_5 .et_home_billboard_item_content{width:300px;}
+    
+}
+
+/* + Billboard Buttons - Begin */
+
+#et_home_billboard_tabpanel
+{
+    position:absolute; left:1px; bottom:0px;width:100%;
+}
+
+#et_home_billboard_tabpanel ul li  
+{
+    float:left; 
+    position:relative; 
+    width:160px; 
+    padding: 0 1px; 
+    border: none; 
+    overflow:hidden;
+} 
+    /* commented out:
+     * border-left:#ABABAB 1px solid; border-right:#676767 1px solid;*/
+    /* Bordr transparency for billboard buttons */
+    /* use rgba to make the border alpha transparency in html5 browser */
+    .html5browser #et_home_billboard_tabpanel ul li  
     {
-        .et_home_billboard_item_content
+        border-left: rgba(171, 171, 171, .15) 1px solid; 
+        border-right: rgba(103, 103, 103, .8) 1px solid; 
+        padding: 0; 
+    }
+    /* For non html5 buttons */
+    #et_home_billboard_tabpanel ul li .et_home_billboard_tabbg  
+    {
+        display:block; 
+        height:80px; 
+        background:#000; 
+        opacity:0.25; 
+        filter:alpha(opacity=35); 
+        width:160px;
+        margin-left: -1px; 
+        border-left:#ABABAB 1px solid; 
+        border-right:#676767 1px solid;
+    }
+        .html5browser #et_home_billboard_tabpanel ul li .et_home_billboard_tabbg  
         {
-            .et_btn_orange 
-            {
-                .et_btn_l {background-image: @pathOrangeBtnIE6;}
-                .et_btn_m {background-image: @pathOrangeBtnIE6;}
-                .et_btn_r {background-image: @pathOrangeBtnIE6;}
-            }
+            margin-left: 0; 
+            border-left: none; 
+            border-right: none; 
         }
+        
+    #et_home_billboard_tabpanel ul li .et_home_billboard_tabimg_active
+    { 
+        display:none; 
+        position:absolute; 
+        top:0; 
+        left:0;
+    }
+    
+    #et_home_billboard_tabpanel ul li .et_home_billboard_tabimg_normal 
+    {
+        display:block; 
+        position:absolute; 
+        top:0; 
+        left:0;
+    }
+
+    #et_home_billboard_tabpanel ul li.et_active .et_home_billboard_tabbg 
+    { 
+        opacity:0.75; filter:alpha(opacity=70);
+    }
+    #et_home_billboard_tabpanel ul li.et_active .et_home_billboard_tabimg_active{ display:block;}
+    #et_home_billboard_tabpanel ul li.et_active .et_home_billboard_tabimg_normal{ display:none;}
+
+    #et_home_billboard_tabpanel ul li#et_home_billboard_tab_1{ padding: 0 1px 0 0; }
+        .html5browser #et_home_billboard_tabpanel ul li#et_home_billboard_tab_1{ border-left:none; padding: 0; }
+        #et_home_billboard_tabpanel ul li#et_home_billboard_tab_1 .et_home_billboard_tabbg  
+        {
+            border-left: none; 
+            margin-left: 0;
+        }
+    
+    #et_home_billboard_tabpanel ul li#et_home_billboard_tab_5{ padding: 0 0 0 1px; }
+        .html5browser #et_home_billboard_tabpanel ul li#et_home_billboard_tab_5{ border-right:none; padding: 0; }
+        #et_home_billboard_tabpanel ul li#et_home_billboard_tab_5 .et_home_billboard_tabbg 
+        {
+            border-right: none;
+        }
+/* + Billboard Buttons - End */
+
+.msie6 #et_home_billboard 
+{
+
+    /* + Orange Button in Billboard (The larger one) - Begin */
+    .et_home_billboard_item_content
+    {
+        @pathOrangeBtnIE6: url(#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange_ie6.png);
+        .et_btn_orange 
+        {
+            .et_btn_l {background-image: @pathOrangeBtnIE6;}
+            .et_btn_m {background-image: @pathOrangeBtnIE6;}
+            .et_btn_r {background-image: @pathOrangeBtnIE6;}
+        }
+    }
+    /* + Orange Button in Billboard (The larger one) - End */
+    
+    #et_home_billboard_tabpanel { z-index: 7000;}
+}
+
+.msie7 #et_home_billboard 
+{
+    #et_home_billboard_tabpanel { z-index: 7000;}
+}
+
+.et-lng-tw #et_home_billboard 
+{
+    /* Normal font style for taiwanese */
+    .et_home_billboard_item_content .et_btn_orange .et_btn_m 
+    {
+        font-style: normal;
+    }
+}
+
+.et-lng-rtl #et_home_billboard 
+{
+    /* Normal font style for right to left because 
+     * webkit cannot properly display arabic char in
+     * italic style on some OS
+     * (Please test chrome on linux + win 7(En) and safari 5 on mac)
+     * */
+    .et_home_billboard_item_content .et_btn_orange .et_btn_m 
+    {
+        font-style: normal;
     }
 }
