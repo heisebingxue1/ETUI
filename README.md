@@ -36,7 +36,5 @@ Limition
 
 ### JSMake
 
-JSMake is the building system that was used in etui, and you need to get familliar with before you begin adding module, 
-
-it handles the dependencies resolution and helps to merge code for each component, for detail, please take a look at http://code.google.com/p/jsmake-preprocessor/
+JSMake is the building system that was used in etui, it handles the dependencies resolution and helps to merge code for each component, for detail, please take a look at http://code.google.com/p/jsmake-preprocessor/
 
