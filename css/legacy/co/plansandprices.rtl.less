@@ -1,0 +1,45 @@
+/* 
+cssframework://etui/legacy/sp/plansandprices.rtl.less
+*/
+/* + Plans And Price - Begin */
+
+    /* First col */
+    html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title.et_column_1 { background: transparent url(/_imgs/checkout2010/et_productchoice_tableh.jpg) repeat-x right -440px; border: none; }
+        html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title_active.et_column_1 {background: transparent url(/_imgs/checkout2010/et_productchoice_tableh.jpg) repeat-x right top;}
+        /* fix background cannot extended to border on firefox */
+        html.et-lng-rtl .mozilla .et_cmc_product_adv_table th.et_td_title.et_column_1 { margin-left: -1px; display: block; width: 192px;}
+    
+    /* Middle col */
+    html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title.et_column_2,
+    html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title.et_column_3  
+    {
+        background: transparent url(/_imgs/checkout2010/et_productchoice_tableh.jpg) repeat-x -30px -440px;
+        border-top: none; border-left: none; border-bottom: none; border-right: 1px solid #E7E7E7; 
+    }
+        html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title_active.et_column_2,
+        html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title_active.et_column_3 
+        {
+            background: transparent url(/_imgs/checkout2010/et_productchoice_tableh.jpg) repeat-x -30px top;  
+        }
+    
+    /* For the last one */ 
+    html.et-lng-rtl .et_cmc_product_adv_table td.et_column_2:last-child ,
+        html.et-lng-rtl .et_cmc_product_adv_table td.et_last { border-right-width: 1px; }
+            
+        /* Column 3 will always be the last one, this is for sha bi IE compatibility */
+        html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title.et_last, 
+        html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title.et_column_3 { background: transparent url(/_imgs/checkout2010/et_productchoice_tableh.jpg) repeat-x left -440px; border-top: none; border-left: none; border-bottom: none; border-right-width: 1px; }
+        html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title:last-child { background: transparent url(/_imgs/checkout2010/et_productchoice_tableh.jpg) repeat-x left -440px;  }
+            html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title_active.et_last,
+            html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title_active.et_column_3 { background: transparent url(/_imgs/checkout2010/et_productchoice_tableh.jpg) repeat-x left top;  }
+            html.et-lng-rtl .et_cmc_product_adv_table th.et_td_title_active:last-child { background: transparent url(/_imgs/checkout2010/et_productchoice_tableh.jpg) repeat-x left top; }
+    
+    /* + Private Teacher Form - Begin */
+    html.et-lng-rtl #et_products_adv_form .et_close_btn 
+    {
+        /* TODO: reverse the close button when the form background is reverted also
+        right: auto; left: 70px; */
+    }
+    
+    /* + Private Teacher Form - End */
+/* + Plans And Price - Begin */

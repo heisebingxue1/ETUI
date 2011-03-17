@@ -1,0 +1,51 @@
+/* 
+cssframework://etui/legacy/sp/interior/levelchart.rtl.less
+*/
+html.et-lng-rtl 
+{
+    .et_interior_section_level_chart 
+    { 
+        margin-left: -3px; 
+        margin-right: 0px;
+        background-image:url(#CacheSvr#/_imgs/online/sp2010/level_chart/level_form_bg_rtl.png);
+    }
+    
+    .et_interior_section_level_chart_bar { margin-left: -3px; margin-right: auto;}
+    .et_interior_section_level_chart_bar_bar { float: left; }
+    .et_interior_section_level_chart_row { float: right; }
+    .et_interior_section_level_chart_col0 { text-align: right; padding-right: 10px; padding-left: 0;}
+    
+    #et_interior_section_level_chart_col1.et_interior_section_level_chart_bar_bar
+    { 
+        background-image: url(#CacheSvr#/_imgs/online/sp2010/level_chart/chart1_rtl.png);
+    }
+    #et_interior_section_level_chart_col2.et_interior_section_level_chart_bar_bar 
+    {
+        background-image: url(#CacheSvr#/_imgs/online/sp2010/level_chart/chart2_rtl.png);
+    }
+    #et_interior_section_level_chart_col3.et_interior_section_level_chart_bar_bar 
+    {
+        background-image: url(#CacheSvr#/_imgs/online/sp2010/level_chart/chart3_rtl.png);
+    }
+    #et_interior_section_level_chart_col4.et_interior_section_level_chart_bar_bar 
+    { 
+        background-image: url(#CacheSvr#/_imgs/online/sp2010/level_chart/chart4_rtl.png);
+    }
+    #et_interior_section_level_chart_col5.et_interior_section_level_chart_bar_bar 
+    {
+        background-image: url(#CacheSvr#/_imgs/online/sp2010/level_chart/chart5_rtl.png);
+    }
+    #et_interior_section_level_chart_col6.et_interior_section_level_chart_bar_bar 
+    { 
+        background-image: url(#CacheSvr#/_imgs/online/sp2010/level_chart/chart6_rtl.png);
+    }
+    .level_chart_bar_number { position: static; float: left; width: 26px; margin: 128px 4px auto 2px; text-align: center;}
+    .et_interior_section_level_chart_col6 .level_chart_bar_number { margin-left: 13px;}
+}
+
+/* ie6 */
+* html.et-lng-rtl
+{
+    /* fix double margin */
+    .level_chart_bar_number { display: inline; }
+}
