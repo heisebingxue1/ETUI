@@ -1,0 +1,77 @@
+/* ef group cover flow */
+.et_group_imageflow img {
+	visibility:hidden;
+	position:absolute; 
+	top:0px;
+	border:0!important;
+	-ms-interpolation-mode:bicubic; /* Enables bicubic image resampling for the IE7 */
+}
+.et_group_imageflow p{
+	text-align:center;
+	margin:0 auto;
+}
+.et_group_imageflow .loading {
+	position:relative;
+	left:50%;
+	margin-left:-106px;
+	width:200px;
+	height:15px;
+	padding:5px;
+	visibility:visible;
+	border:1px solid white;
+}
+.et_group_imageflow .loading_bar {
+	height:15px;
+	width:1%;
+	background:#fff;
+	visibility:visible;
+}
+.et_group_imageflow .caption {
+	font-weight:bold;
+	position:relative; 
+	text-align:center;
+	z-index:10000;
+	font-size:12px;
+	color:#333333;
+	height:60px;
+	*height:60px;
+	width:660px;
+}
+	
+.et_group_imageflow .scrollbar {
+	visibility:hidden;
+	position:relative; 
+	background-repeat:no-repeat;
+	height:26px;
+	margin: 0px;
+	z-index:10001;
+}
+.et_group_imageflow .slider {
+	position:absolute;
+	z-index:10002;
+	background-image:url('#CacheSvr#/_imgs/online/sp2010/et_3rd_efgroup_slider.png');
+	background-repeat:no-repeat;
+	width:22px;
+	height:22px;
+}
+#et_group_timeline {
+	visibility:hidden;
+	position:relative; 
+	text-align:left;
+	width:532px;
+	height: 347px;
+	overflow:hidden;
+	margin-bottom:0;
+}
+#et_group_timeline #et_group_timeline_navigation 
+{
+    padding-top: 1px;
+	background:url('#CacheSvr#/_imgs/online/sp2010/et_3rd_efgroup_sliderbg.png') 20px 10px no-repeat;
+}
+#et_group_timeline #et_group_timeline_images {}
+#et_group_timeline #et_group_timeline_caption { display: none; }
+#et_group_timeline_captions { float:left; }
+#et_group_timeline_captions .et_group_timeline_caption { display: none; }
+#et_group_timeline_captions .et_active { display: block; }
+	#et_group_timeline_captions .et_group_timeline_year { font-size: 22px; font-family: Arial; color: #0070b8; font-weight:bolder;}
+	#et_group_timeline_captions .et_group_timeline_text { }

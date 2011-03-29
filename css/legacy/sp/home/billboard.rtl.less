@@ -147,12 +147,19 @@ html.et-lng-rtl #et_home_billboard_tabpanel ul li
         {
             border-left: none;
         }
+    /* Do not need to float right here, because the tabs are sprite and
+     * the sprite images axis starts from top left */
+    html.et-lng-rtl .et_home_billboard_tabimg_active img,
+    html.et-lng-rtl .et_home_billboard_tabimg_normal img
+    {
+        float: left;
+    }
 /* + Billboard Buttons(Tabs) - End */
 
 /* MSIE6 */    
 * html.et-lng-rtl #et_home_billboard 
 {
-    @pathOrangeBtnIE6Rtl: url("#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange_ie6.png");
+    @pathOrangeBtnIE6Rtl: url("#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange_ie6.rtl.gif");
     
     .et_home_billboard_item_content
     {
@@ -165,3 +172,14 @@ html.et-lng-rtl #et_home_billboard_tabpanel ul li
     }
 }
 
+/* MSIE6 & 7 */
+* html.et-lng-rtl #et_home_billboard ,
+html.et-lng-rtl.msie7 #et_home_billboard 
+{
+    /* Set direction:ltr otherwise margin will not work */
+    .et_home_billboard_tabimg_active,
+    .et_home_billboard_tabimg_normal
+    {
+        direction: ltr;
+    }
+}

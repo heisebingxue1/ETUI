@@ -189,7 +189,7 @@ cssframework://etui/legacy/sp/home/billboard.less
         }
 /* + Billboard Buttons - End */
 
-.msie6 #et_home_billboard 
+html.msie6 #et_home_billboard 
 {
 
     /* + Orange Button in Billboard (The larger one) - Begin */
@@ -208,12 +208,12 @@ cssframework://etui/legacy/sp/home/billboard.less
     #et_home_billboard_tabpanel { z-index: 7000;}
 }
 
-.msie7 #et_home_billboard 
+html.msie7 #et_home_billboard 
 {
     #et_home_billboard_tabpanel { z-index: 7000;}
 }
 
-.et-lng-tw #et_home_billboard 
+html.et-lng-tw #et_home_billboard 
 {
     /* Normal font style for taiwanese */
     .et_home_billboard_item_content .et_btn_orange .et_btn_m 
@@ -222,7 +222,7 @@ cssframework://etui/legacy/sp/home/billboard.less
     }
 }
 
-.et-lng-rtl #et_home_billboard 
+html.et-lng-rtl #et_home_billboard 
 {
     /* Normal font style for right to left because 
      * webkit cannot properly display arabic char in
@@ -232,5 +232,12 @@ cssframework://etui/legacy/sp/home/billboard.less
     .et_home_billboard_item_content .et_btn_orange .et_btn_m 
     {
         font-style: normal;
+    }
+}
+html.et-lng-rtl #et_home_billboard 
+{
+    .et_home_billboard_item_content
+    {
+        font-size: 14px;
     }
 }

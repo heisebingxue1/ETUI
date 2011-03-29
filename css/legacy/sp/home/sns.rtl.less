@@ -27,7 +27,7 @@ html.et-lng-rtl #et_home_sns_wrapper
         float: right; 
         #et_home_sns_item_img1 
         { 
-            margin-right: 0; 
+            margin-right: -53px; 
             margin-left: auto;
         }
         #et_home_sns_item_img2 
@@ -37,8 +37,71 @@ html.et-lng-rtl #et_home_sns_wrapper
         }
         #et_home_sns_item_img3 
         { 
-            margin-right: -53px; 
+            margin-right: -2px; 
             margin-left: auto;
         }
     }
+}
+
+/*
+    no rtl for ie 6 & 7 ... 
+    because using rtl causes: 
+    1. text and images in et_home_sns_item will be moved out of container
+    and aligned incorrectly 
+    2. invisible text
+    
+    no cure for this, don't waster your time for stupid IEs
+*/
+* html.et-lng-rtl #et_home_sns_wrapper,
+html.et-lng-rtl.msie7 #et_home_sns_wrapper 
+{
+    zoom: 1; direction: ltr; 
+    padding-left: 0; 
+    padding-right: 20px; 
+
+    h3 
+    { 
+        margin-right: auto; 
+        margin-left: 10px;
+    }
+    .et_home_sns_item 
+    { 
+        margin-left: 10px;
+        margin-right: 50px; 
+        float: left; 
+        span 
+        { 
+            float: left; 
+            margin-left: 15px;
+            margin-right: 0; 
+        }
+        
+        /* at least arabic people should beable to read it. */
+        a span
+        {
+            direction: rtl;
+        }
+    }
+
+    .et_home_sns_item_imgs 
+    { 
+        float: left; 
+        #et_home_sns_item_img1 
+        { 
+            margin-right: auto; 
+            margin-left: 0;
+        }
+        #et_home_sns_item_img2 
+        { 
+            margin-right: auto; 
+            margin-left: -25px;
+        }
+        #et_home_sns_item_img3 
+        { 
+            margin-right: auto; 
+            margin-left: -50px;
+        }
+    }
+    
+    
 }
