@@ -39,6 +39,6 @@ else
 fi
     
 echo building css
-node $binLessc $source.less -x > $target'.css'
+node $binLessc $source.less > $target'.css'
 echo building rtl css
-node $binLessc $source.rtl.less -x > $target'.rtl.css'
+node $binLessc $source.rtl.less > $target'.rtl.css'
