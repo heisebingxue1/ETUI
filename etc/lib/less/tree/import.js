@@ -1,4 +1,4 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 //
 // CSS @import node
 //
@@ -11,16 +11,16 @@ if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
 // `import,push`, we also pass it a callback, which it'll call once
 // the file has been fetched, and parsed.
 //
-tree.Import = function Import(path, imports) {
+tree.Import = function (path, imports) {
     var that = this;
 
     this._path = path;
 
     // The '.less' extension is optional
     if (path instanceof tree.Quoted) {
-        this.path = /\.(le?|c)ss$/.test(path.content) ? path.content : path.content + '.less';
+        this.path = /\.(le?|c)ss$/.test(path.value) ? path.value : path.value + '.less';
     } else {
-        this.path = path.value.content || path.value;
+        this.path = path.value.value || path.value;
     }
 
     this.css = /css$/.test(this.path);
@@ -28,6 +28,9 @@ tree.Import = function Import(path, imports) {
     // Only pre-compile .less files
     if (! this.css) {
         imports.push(this.path, function (root) {
+            if (! root) {
+                throw new(Error)("Error parsing " + that.path);
+            }
             that.root = root;
         });
     }
@@ -50,19 +53,25 @@ tree.Import.prototype = {
             return "";
         }
     },
-    eval: function () {
+    eval: function (env) {
+        var ruleset;
+
         if (this.css) {
             return this;
         } else {
-            for (var i = 0; i < this.root.rules.length; i++) {
-                if (this.root.rules[i] instanceof tree.Import) {
+            ruleset = new(tree.Ruleset)(null, this.root.rules.slice(0));
+
+            for (var i = 0; i < ruleset.rules.length; i++) {
+                if (ruleset.rules[i] instanceof tree.Import) {
                     Array.prototype
                          .splice
-                         .apply(this.root.rules,
-                                [i, 1].concat(this.root.rules[i].eval()));
+                         .apply(ruleset.rules,
+                                [i, 1].concat(ruleset.rules[i].eval(env)));
                 }
             }
-            return this.root.rules;
+            return ruleset.rules;
         }
     }
 };
+
+})(require('less/tree'));

@@ -1,6 +1,6 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 
-tree.Selector = function Selector(elements) {
+tree.Selector = function (elements) {
     this.elements = elements;
     if (this.elements[0].combinator.value === "") {
         this.elements[0].combinator.value = ' ';
@@ -13,15 +13,16 @@ tree.Selector.prototype.match = function (other) {
         return false;
     }
 };
-tree.Selector.prototype.toCSS = function () {
+tree.Selector.prototype.toCSS = function (env) {
     if (this._css) { return this._css }
 
     return this._css = this.elements.map(function (e) {
         if (typeof(e) === 'string') {
             return ' ' + e.trim();
         } else {
-            return e.toCSS();
+            return e.toCSS(env);
         }
     }).join('');
 };
 
+})(require('less/tree'));

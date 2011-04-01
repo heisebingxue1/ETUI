@@ -1,10 +1,14 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 
-tree.Alpha = function Alpha(val) {
+tree.Alpha = function (val) {
     this.value = val;
 };
 tree.Alpha.prototype = {
     toCSS: function () {
-        return "alpha(opacity=" + (this.value.toCSS ? this.value.toCSS() : this.value) + ")";
-    }
+        return "alpha(opacity=" +
+               (this.value.toCSS ? this.value.toCSS() : this.value) + ")";
+    },
+    eval: function () { return this }
 };
+
+})(require('less/tree'));

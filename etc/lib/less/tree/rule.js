@@ -1,8 +1,10 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 
-tree.Rule = function Rule(name, value) {
+tree.Rule = function (name, value, important, index) {
     this.name = name;
     this.value = (value instanceof tree.Value) ? value : new(tree.Value)([value]);
+    this.important = important ? ' ' + important.trim() : '';
+    this.index = index;
 
     if (name.charAt(0) === '@') {
         this.variable = true;
@@ -11,35 +13,17 @@ tree.Rule = function Rule(name, value) {
 tree.Rule.prototype.toCSS = function (env) {
     if (this.variable) { return "" }
     else {
-        return this.name + ": " +
-              (this.value.toCSS ? this.value.toCSS(env) : this.value) + ";";
+        return this.name + (env.compress ? ':' : ': ') +
+               this.value.toCSS(env) +
+               this.important + ";";
     }
 };
 
 tree.Rule.prototype.eval = function (context) {
-    return new(tree.Rule)(this.name, this.value.eval(context));
+    return new(tree.Rule)(this.name, this.value.eval(context), this.important, this.index);
 };
 
-tree.Value = function Value(value) {
-    this.value = value;
-    this.is = 'value';
-};
-tree.Value.prototype = {
-    eval: function (env) {
-        if (this.value.length === 1) {
-            return this.value[0].eval(env);
-        } else {
-            return this;
-        }
-    },
-    toCSS: function (env) {
-        return this.value.map(function (e) {
-            return e.toCSS ? e.toCSS(env) : e;
-        }).join(', ');
-    }
-};
-
-tree.Shorthand = function Shorthand(a, b) {
+tree.Shorthand = function (a, b) {
     this.a = a;
     this.b = b;
 };
@@ -47,5 +31,8 @@ tree.Shorthand = function Shorthand(a, b) {
 tree.Shorthand.prototype = {
     toCSS: function (env) {
         return this.a.toCSS(env) + "/" + this.b.toCSS(env);
-    }
+    },
+    eval: function () { return this }
 };
+
+})(require('less/tree'));

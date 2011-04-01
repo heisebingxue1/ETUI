@@ -1,8 +1,8 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 //
 // RGB Colors - #ff0014, #eee
 //
-tree.Color = function Color(rgb, a) {
+tree.Color = function (rgb, a) {
     //
     // The end goal here, is to parse the arguments
     // into an integer triplet, such as `128, 255, 0`
@@ -11,7 +11,6 @@ tree.Color = function Color(rgb, a) {
     //
     if (Array.isArray(rgb)) {
         this.rgb = rgb;
-        this.alpha = a;
     } else if (rgb.length == 6) {
         this.rgb = rgb.match(/.{2}/g).map(function (c) {
             return parseInt(c, 16);
@@ -21,6 +20,7 @@ tree.Color = function Color(rgb, a) {
             return parseInt(c + c, 16);
         });
     }
+    this.alpha = typeof(a) === 'number' ? a : 1;
 };
 tree.Color.prototype = {
     eval: function () { return this },
@@ -32,8 +32,10 @@ tree.Color.prototype = {
     // Values are capped between `0` and `255`, rounded and zero-padded.
     //
     toCSS: function () {
-        if (this.alpha && this.alpha < 1.0) {
-            return "rgba(" + this.rgb.concat(this.alpha).join(', ') + ")";
+        if (this.alpha < 1.0) {
+            return "rgba(" + this.rgb.map(function (c) {
+                return Math.round(c);
+            }).concat(this.alpha).join(', ') + ")";
         } else {
             return '#' + this.rgb.map(function (i) {
                 i = Math.round(i);
@@ -60,6 +62,32 @@ tree.Color.prototype = {
             result[c] = tree.operate(op, this.rgb[c], other.rgb[c]);
         }
         return new(tree.Color)(result);
+    },
+
+    toHSL: function () {
+        var r = this.rgb[0] / 255,
+            g = this.rgb[1] / 255,
+            b = this.rgb[2] / 255,
+            a = this.alpha;
+
+        var max = Math.max(r, g, b), min = Math.min(r, g, b);
+        var h, s, l = (max + min) / 2, d = max - min;
+
+        if (max === min) {
+            h = s = 0;
+        } else {
+            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+            switch (max) {
+                case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                case g: h = (b - r) / d + 2;               break;
+                case b: h = (r - g) / d + 4;               break;
+            }
+            h /= 6;
+        }
+        return { h: h * 360, s: s, l: l, a: a };
     }
 };
 
+
+})(require('less/tree'));

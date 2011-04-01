@@ -1,15 +1,16 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 
-tree.Quoted = function Quoted(value, content) {
-    this.value = value;
-    this.content = content;
+tree.Quoted = function (str, content) {
+    this.value = content || '';
+    this.quote = str.charAt(0);
 };
 tree.Quoted.prototype = {
     toCSS: function () {
-        var css = this.value;
-        return css;
+        return this.quote + this.value + this.quote;
     },
     eval: function () {
         return this;
     }
 };
+
+})(require('less/tree'));

@@ -1,40 +1,81 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 
-tree.Ruleset = function Ruleset(selectors, rules) {
+tree.Ruleset = function (selectors, rules) {
     this.selectors = selectors;
     this.rules = rules;
     this._lookups = {};
 };
 tree.Ruleset.prototype = {
-    eval: function () { return this },
-    evalRules: function (context) {
-        var rules = [];
+    eval: function (env) {
+        var ruleset = new(tree.Ruleset)(this.selectors, this.rules.slice(0));
 
-        this.rules.forEach(function (rule) {
-            if (rule.evalRules) {
-                rules.push(rule.evalRules(context));
-            } else if (rule instanceof tree.mixin.Call) {
-                Array.prototype.push.apply(rules, rule.eval(context));
-            } else {
-                rules.push(rule.eval(context));
+        ruleset.root = this.root;
+
+        // push the current ruleset to the frames stack
+        env.frames.unshift(ruleset);
+
+        // Evaluate imports
+        if (ruleset.root) {
+            for (var i = 0; i < ruleset.rules.length; i++) {
+                if (ruleset.rules[i] instanceof tree.Import) {
+                    Array.prototype.splice
+                         .apply(ruleset.rules, [i, 1].concat(ruleset.rules[i].eval(env)));
+                }
             }
-        });
-        this.rules = rules;
-        return this;
+        }
+
+        // Store the frames around mixin definitions,
+        // so they can be evaluated like closures when the time comes.
+        for (var i = 0; i < ruleset.rules.length; i++) {
+            if (ruleset.rules[i] instanceof tree.mixin.Definition) {
+                ruleset.rules[i].frames = env.frames.slice(0);
+            }
+        }
+
+        // Evaluate mixin calls.
+        for (var i = 0; i < ruleset.rules.length; i++) {
+            if (ruleset.rules[i] instanceof tree.mixin.Call) {
+                Array.prototype.splice
+                     .apply(ruleset.rules, [i, 1].concat(ruleset.rules[i].eval(env)));
+            }
+        }
+
+        // Evaluate everything else
+        for (var i = 0, rule; i < ruleset.rules.length; i++) {
+            rule = ruleset.rules[i];
+
+            if (! (rule instanceof tree.mixin.Definition)) {
+                ruleset.rules[i] = rule.eval ? rule.eval(env) : rule;
+            }
+        }
+
+        // Pop the stack
+        env.frames.shift();
+
+        return ruleset;
+    },
+    match: function (args) {
+        return !args || args.length === 0;
     },
     variables: function () {
         if (this._variables) { return this._variables }
         else {
-            return this._variables = this.rules.filter(function (r) {
-                if (r instanceof tree.Rule && r.variable === true) { return r }
-            });
+            return this._variables = this.rules.reduce(function (hash, r) {
+                if (r instanceof tree.Rule && r.variable === true) {
+                    hash[r.name] = r;
+                }
+                return hash;
+            }, {});
         }
+    },
+    variable: function (name) {
+        return this.variables()[name];
     },
     rulesets: function () {
         if (this._rulesets) { return this._rulesets }
         else {
             return this._rulesets = this.rules.filter(function (r) {
-                if (r instanceof tree.Ruleset || r instanceof tree.mixin.Definition) { return r }
+                return (r instanceof tree.Ruleset) || (r instanceof tree.mixin.Definition);
             });
         }
     },
@@ -85,38 +126,21 @@ tree.Ruleset.prototype = {
                     }
                 }
             }
-        } else {
-            context = [], env = { frames: [] }
-            for (var i = 0; i < this.rules.length; i++) {
-                if (this.rules[i] instanceof tree.Import) {
-                    Array.prototype.splice
-                         .apply(this.rules, [i, 1].concat(this.rules[i].eval(env)));
-                }
-            }
         }
 
-        // push the current ruleset to the frames stack
-        env.frames.unshift(this);
-
-        // Evaluate mixins
-        for (var i = 0; i < this.rules.length; i++) {
-            if (this.rules[i] instanceof tree.mixin.Call) {
-                Array.prototype.splice
-                     .apply(this.rules, [i, 1].concat(this.rules[i].eval(env)));
-            }
-        }
-
-        // Evaluate rules and rulesets
+        // Compile rules and rulesets
         for (var i = 0; i < this.rules.length; i++) {
             rule = this.rules[i];
 
-            if (rule.rules) {
+            if (rule.rules || (rule instanceof tree.Directive)) {
                 rulesets.push(rule.toCSS(paths, env));
             } else if (rule instanceof tree.Comment) {
-                if (this.root) {
-                    rulesets.push(rule.toCSS());
-                } else {
-                    rules.push(rule.toCSS());
+                if (!rule.silent) {
+                    if (this.root) {
+                        rulesets.push(rule.toCSS(env));
+                    } else {
+                        rules.push(rule.toCSS(env));
+                    }
                 }
             } else {
                 if (rule.toCSS && !rule.variable) {
@@ -133,24 +157,23 @@ tree.Ruleset.prototype = {
         // a selector, or {}.
         // Otherwise, only output if this ruleset has rules.
         if (this.root) {
-            css.push(rules.join('\n'));
+            css.push(rules.join(env.compress ? '' : '\n'));
         } else {
             if (rules.length > 0) {
                 selector = paths.map(function (p) {
                     return p.map(function (s) {
-                        return s.toCSS();
+                        return s.toCSS(env);
                     }).join('').trim();
-                }).join(paths.length > 3 ? ',\n' : ', ');
-                css.push(selector, " {\n  " + rules.join('\n  ') + "\n}\n");
+                }).join(env.compress ? ',' : (paths.length > 3 ? ',\n' : ', '));
+                css.push(selector,
+                        (env.compress ? '{' : ' {\n  ') +
+                        rules.join(env.compress ? '' : '\n  ') +
+                        (env.compress ? '}' : '\n}\n'));
             }
         }
         css.push(rulesets);
 
-        // Pop the stack
-        env.frames.shift();
-        paths.forEach(function (p) { p.pop() });
-
-        return css.join('');
+        return css.join('') + (env.compress ? '\n' : '');
     }
 };
-
+})(require('less/tree'));

@@ -1,52 +1,100 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 
 tree.mixin = {};
-tree.mixin.Call = function MixinCall(elements, args) {
+tree.mixin.Call = function (elements, args, index) {
     this.selector = new(tree.Selector)(elements);
     this.arguments = args;
+    this.index = index;
 };
 tree.mixin.Call.prototype = {
     eval: function (env) {
-        var mixins, rules = [];
+        var mixins, rules = [], match = false;
 
         for (var i = 0; i < env.frames.length; i++) {
             if ((mixins = env.frames[i].find(this.selector)).length > 0) {
                 for (var m = 0; m < mixins.length; m++) {
-                    Array.prototype.push.apply(
-                          rules, mixins[m].eval(this.arguments, env).rules);
+                    if (mixins[m].match(this.arguments, env)) {
+                        try {
+                            Array.prototype.push.apply(
+                                  rules, mixins[m].eval(env, this.arguments).rules);
+                            match = true;
+                        } catch (e) {
+                            throw { message: e.message, index: e.index, stack: e.stack, call: this.index };
+                        }
+                    }
                 }
-                return rules;
+                if (match) {
+                    return rules;
+                } else {
+                    throw { message: 'No matching definition was found for `' +
+                                      this.selector.toCSS().trim() + '('      +
+                                      this.arguments.map(function (a) {
+                                          return a.toCSS();
+                                      }).join(', ') + ")`",
+                            index:   this.index };
+                }
             }
         }
-        throw new(Error)(this.selector.toCSS().trim() + " is undefined");
+        throw { message: this.selector.toCSS().trim() + " is undefined",
+                index: this.index };
     }
 };
 
-tree.mixin.Definition = function MixinDefinition(name, params, rules) {
+tree.mixin.Definition = function (name, params, rules) {
     this.name = name;
     this.selectors = [new(tree.Selector)([new(tree.Element)(null, name)])];
     this.params = params;
+    this.arity = params.length;
     this.rules = rules;
     this._lookups = {};
+    this.required = params.reduce(function (count, p) {
+        if (!p.name || (p.name && !p.value)) { return count + 1 }
+        else                                 { return count }
+    }, 0);
+    this.parent = tree.Ruleset.prototype;
+    this.frames = [];
 };
 tree.mixin.Definition.prototype = {
-    toCSS: function () { return "" },
-    variables: function () { return tree.Ruleset.prototype.variables.apply(this) },
-    find: function () { return tree.Ruleset.prototype.find.apply(this, arguments) },
-    rulesets: function () { return tree.Ruleset.prototype.rulesets.apply(this) },
+    toCSS:     function ()     { return "" },
+    variable:  function (name) { return this.parent.variable.call(this, name) },
+    variables: function ()     { return this.parent.variables.call(this) },
+    find:      function ()     { return this.parent.find.apply(this, arguments) },
+    rulesets:  function ()     { return this.parent.rulesets.apply(this) },
 
-    eval: function (args, env) {
+    eval: function (env, args) {
         var frame = new(tree.Ruleset)(null, []), context;
 
         for (var i = 0, val; i < this.params.length; i++) {
-            if (val = (args && args[i]) || this.params[i].value) {
-                frame.rules.unshift(new(tree.Rule)(this.params[i].name, val));
-            } else {
-                throw new(Error)("wrong number of arguments for " + this.name);
+            if (this.params[i].name) {
+                if (val = (args && args[i]) || this.params[i].value) {
+                    frame.rules.unshift(new(tree.Rule)(this.params[i].name, val.eval(env)));
+                } else {
+                    throw { message: "wrong number of arguments for " + this.name +
+                            ' (' + args.length + ' for ' + this.arity + ')' };
+                }
             }
         }
-        return new(tree.Ruleset)(null, this.rules).evalRules({
-            frames: [this, frame].concat(env.frames)
+        return new(tree.Ruleset)(null, this.rules.slice(0)).eval({
+            frames: [this, frame].concat(this.frames, env.frames)
         });
+    },
+    match: function (args, env) {
+        var argsLength = (args && args.length) || 0, len;
+
+        if (argsLength < this.required)                               { return false }
+        if ((this.required > 0) && (argsLength > this.params.length)) { return false }
+
+        len = Math.min(argsLength, this.arity);
+
+        for (var i = 0; i < len; i++) {
+            if (!this.params[i].name) {
+                if (args[i].eval(env).toCSS() != this.params[i].value.eval(env).toCSS()) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 };
+
+})(require('less/tree'));

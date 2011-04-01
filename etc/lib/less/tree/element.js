@@ -1,30 +1,32 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 
-tree.Element = function Element(combinator, value) {
+tree.Element = function (combinator, value) {
     this.combinator = combinator instanceof tree.Combinator ?
                       combinator : new(tree.Combinator)(combinator);
     this.value = value.trim();
 };
-tree.Element.prototype.toCSS = function () {
-    return this.combinator.toCSS() + this.value;
+tree.Element.prototype.toCSS = function (env) {
+    return this.combinator.toCSS(env || {}) + this.value;
 };
 
-tree.Combinator = function Combinator(value) {
+tree.Combinator = function (value) {
     if (value === ' ') {
         this.value = ' ';
     } else {
         this.value = value ? value.trim() : "";
     }
 };
-tree.Combinator.prototype.toCSS = function () {
-    switch (this.value) {
-        case ''  : return '';
-        case ' ' : return ' ';
-        case '&' : return '';
-        case ':' : return ' :';
-        case '::': return '::';
-        case '+' : return ' + ';
-        case '~' : return ' ~ ';
-        case '>' : return ' > ';
-    }
+tree.Combinator.prototype.toCSS = function (env) {
+    return {
+        ''  : '',
+        ' ' : ' ',
+        '&' : '',
+        ':' : ' :',
+        '::': '::',
+        '+' : env.compress ? '+' : ' + ',
+        '~' : env.compress ? '~' : ' ~ ',
+        '>' : env.compress ? '>' : ' > '
+    }[this.value];
 };
+
+})(require('less/tree'));

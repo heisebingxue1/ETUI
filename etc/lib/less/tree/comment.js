@@ -1,10 +1,14 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 
-tree.Comment = function Comment(value) {
+tree.Comment = function (value, silent) {
     this.value = value;
+    this.silent = !!silent;
 };
 tree.Comment.prototype = {
-    toCSS: function () {
-        return this.value;
-    }
+    toCSS: function (env) {
+        return env.compress ? '' : this.value;
+    },
+    eval: function () { return this }
 };
+
+})(require('less/tree'));

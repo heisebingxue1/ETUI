@@ -1,9 +1,9 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 
 //
 // A number with a unit
 //
-tree.Dimension = function Dimension(value, unit) {
+tree.Dimension = function (value, unit) {
     this.value = parseFloat(value);
     this.unit = unit || null;
 };
@@ -31,3 +31,4 @@ tree.Dimension.prototype = {
     }
 };
 
+})(require('less/tree'));

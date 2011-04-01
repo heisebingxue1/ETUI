@@ -1,6 +1,6 @@
-if (typeof(require) !== 'undefined') { var tree = require('less/tree') }
+(function (tree) {
 
-tree.Operation = function Operation(op, operands) {
+tree.Operation = function (op, operands) {
     this.op = op.trim();
     this.operands = operands;
 };
@@ -28,3 +28,5 @@ tree.operate = function (op, a, b) {
         case '/': return a / b;
     }
 };
+
+})(require('less/tree'));
