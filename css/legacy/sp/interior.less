@@ -4,9 +4,64 @@ cssframework://etui/legacy/sp/interior.less
 @import url(./interior/findoutmore.less);
 @import url(./interior/levelchart.less);
 
+/* - Shared + Begin */
+
 /*
     a shared a interior layout css which 
     currently applies to online-school or private teacher pages
 */
 .et_interior_serviceDetail_title { padding:10px 20px 20px 50px; }
 .et_interior_serviceDetail_desc { padding:10px 20px 20px 50px; }
+
+.et_interior_innerpane
+{
+    .et_interior_innerpane_left
+    {
+        padding-left: 10px;
+    }
+    .et_interior_innerpane_right
+    {
+        margin-right: 10px; 
+        width: 420px;
+    }
+}
+
+/* - Shared + End */
+
+/* - Chain Item + Begin */
+
+/* chain item which used in toefl-preparation */
+.et_interior_chainitems 
+{ 
+    background-image: url(#CacheSvr#/_imgs/online/sp2010/et_frame_bg_flow.png); 
+    width: 419px; 
+    height: 95px; 
+    position: relative;
+    
+    .et_interior_chainitem_1, 
+    .et_interior_chainitem_2,
+    .et_interior_chainitem_3 
+    {
+        width: 117px; 
+        height: 95px; 
+        float:left; 
+        padding-top:5px; 
+        font-size: 12px;
+    }
+    
+    .et_interior_chainitem_1 
+    { 
+        width: 125px; padding-left: 8px;
+    }
+    .et_interior_chainitem_2 
+    { 
+        width: 125px; padding-left: 15px;
+    }
+    .et_interior_chainitem_3 
+    { 
+        width: 125px; padding-left: 15px;
+    }
+}
+
+
+/* - Chain Item + Begin */

@@ -106,6 +106,8 @@ html.et-lng-rtl
     
     #et_3rd_main_content
     {
+        .et_3rd_align_left { float: right; }
+        .et_3rd_align_right { float: left; }
         .et_3rd_intro { padding-left: 30px; padding-right: 15px;}
         .et_3rd_into_alt 
         { 
@@ -145,7 +147,11 @@ html.et-lng-rtl
                 ul
                 {
                     padding-left:  23px; padding-right:  22px; 
-                    li a { background-position:left 50%; }
+                    li a 
+                    {
+                        background-position:left 50%; 
+                        background-image: url(#CacheSvr#/_imgs/online/sp2010/et_arrow_disc_lightgray_rtl.gif);
+                    }
                 }
             }
         }
@@ -190,6 +196,7 @@ html.et-lng-rtl
                     &.active
                     {
                         background-position: left 50%;
+                        background-image: url(#CacheSvr#/_imgs/online/sp2010/et_specialpage_intro_list_arrow_rtl.png);
                     }
                 }
             }
@@ -268,11 +275,11 @@ html.et-lng-rtl
                 margin-right: 0; 
                 li 
                 {
-                    background: url(../_imgs/online/sp2010/separator-01.gif) repeat-x 0 100%; 
+                    background: url(#CacheSvr#/_imgs/online/sp2010/separator-01.gif) repeat-x 0 100%; 
                 }
                 .et_img-box 
                 { 
-                    background: url(../_imgs/online/sp2010/bg-img-box.gif) no-repeat; 
+                    background: url(#CacheSvr#/_imgs/online/sp2010/bg-img-box.gif) no-repeat; 
                     padding-left: 0;
                     padding-right: 11px;
                     margin-left: 4px;
@@ -330,4 +337,64 @@ html.et-lng-rtl
     }
     
     /* + The Team - End */
+    
+    /* + Other - Begin */
+    
+    /* New button style on 'press' pages */
+    .et_button_back_news_std { margin-right: auto; margin-left: 0; float: left; }
+    
+    /* Study abroad */
+    .et_boxes_courses .et_box_courses_list li 
+    { 
+        background-position: right 10px;
+        padding-right: 15px;
+        padding-left: 0;
+    }
+    
+    /* styles that was used in press-coverage */
+    .et_interior_press_coverage
+    {
+        .et_interior_press_coverage_info { float: right; }
+        .et_interior_press_coverage_logo
+        {
+            float: left;
+            background-image: url(#CacheSvr#/_imgs/online/sp2010/et_press_coverage_icons_rtl.jpg);
+        }
+        .et_interior_press_coverage_logo_financialtimes 
+        {
+            height: 30px; background-position: 0 -700px; margin-top: 10px;
+        }
+        .et_interior_press_coverage_logo_about
+        {
+            height: 40px; background-position: 0 -600px;
+        }
+        .et_interior_press_coverage_logo_embassy
+        {
+            height: 75px; background-position: 0 -500px; margin-top: -20px;
+        }
+        .et_interior_press_coverage_logo_hreonline
+        {
+            height: 60px; background-position: 0 0; 
+        }
+        .et_interior_press_coverage_logo_eduvac
+        {
+            height:60px; background-position: 0 -100px;
+        }
+        .et_interior_press_coverage_logo_asianet
+        {
+            height: 60px; background-position: 0 -200px;
+        }
+        .et_interior_press_coverage_logo_gz2010
+        {
+            height: 80px; margin-top: -20px; background-position: 0 -300px;
+        }
+        .et_interior_press_coverage_logo_bj2008
+        {
+            background-position: 0 -400px;
+        }
+        
+    }
+
+    
+    /* + Other - End */
 }

@@ -15,4 +15,13 @@ html.et-lng-rtl
     {
         float: left;
     }
+    
+    /* 
+    don't put the slider to the right side
+    because the 3rd party imageflow control does not detect direction
+     */
+    #et_group_timeline_scrollbar
+    {
+        direction: ltr;
+    }
 }
