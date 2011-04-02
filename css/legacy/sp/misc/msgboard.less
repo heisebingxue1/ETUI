@@ -1,0 +1,225 @@
+/* 
+cssframework://etui/legacy/sp/misc/msgboard.less
+*/
+/*
+Message board which displays simple message with a beautiful wallpaper in the back
+*/
+
+/* Classes */
+.et-misc-msgboard-border
+{
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+/* Layout */
+.et-misc-msgboard
+{
+    width: 100%;
+    padding:0;
+    margin: 0;
+    min-height: 485px;
+    position: relative;
+    box-shadow: inset 0px 5px 8px rgba(0, 0, 0, .05);
+    -moz-box-shadow: inset 0px 5px 8px rgba(0, 0, 0, .05);
+    -webkit-box-shadow: inset 0px 5px 8px rgba(0, 0, 0, .05);
+    
+    .et-misc-msgboard-box
+    {
+        .et-misc-msgboard-border;
+        overflow: hidden;
+        box-shadow: 2px 2px 4px rgba(231, 231, 231, .75);
+        -moz-box-shadow: 2px 2px 4px rgba(231, 231, 231, .75);
+        -webkit-box-shadow:2px 2px 4px rgba(231, 231, 231, .75);
+        
+        .et-misc-msgboard-box-top,
+        .et-misc-msgboard-box-bottom
+        {
+            height: 5px;
+            width: 100%;
+            position: relative;
+            overflow: hidden; 
+            .et-misc-msgboard-box-cornerbg
+            {
+                background-image: url(#CacheSvr#/_imgs/online/sp2010/et-misc-msgboard-box-topbottom.png);
+                font-size: 0;
+                line-height: 0;
+                height: 5px;
+            }
+            
+            .et-misc-msgboard-box-cornertopleft
+            {
+                position: absolute;
+                margin-left: -5px;
+                width: 100%;
+                background-position: 5px 0;
+            }
+            .et-misc-msgboard-box-cornertopright
+            {
+                float: right;
+                width: 5px;
+                background-position: right 0;
+                
+            }
+            .et-misc-msgboard-box-cornerbottomleft
+            {
+                position: absolute;
+                margin-left: -5px;
+                width: 100%;
+                background-position: 5px -5px;
+            }
+            .et-misc-msgboard-box-cornerbottomright
+            {
+                float: right;
+                width: 5px;
+                background-position: right -5px;
+            }
+        }
+    }
+    
+    .et-misc-msgboard-box_white
+    {
+        .et-misc-msgboard-box-bg
+        {
+            /* Default bg color */
+            background-color: #FFF;
+        }
+    }
+    
+    
+}
+
+html.msie .et-misc-msgboard
+{
+   
+    .et-misc-msgboard-box_white
+    {
+        .et-misc-msgboard-box-bg
+        {
+            /* Special color setting for ie, transparency applies just to background */
+            background-color: transparent;
+            filter: e("progid:DXImageTransform.Microsoft.gradient(startColorstr=#F2FFFFFF, endColorstr=#F2FFFFFF)");
+        }
+    }
+}
+
+html.msie6 .et-misc-msgboard
+{
+    height: 485px;
+    
+    .et-misc-msgboard-box
+    {
+        
+        
+        .et-misc-msgboard-box-top,
+        .et-misc-msgboard-box-bottom
+        {
+            .et-misc-msgboard-box-cornerbg
+            {
+                background-image: url(#CacheSvr#/_imgs/online/sp2010/et-misc-msgboard-box-topbottom.gif);
+                filter: e("alpha(opacity=95)");
+            }
+        }
+    }
+}
+
+html.html5browser .et-misc-msgboard
+{
+
+    .et-misc-msgboard-box
+    {
+        .et-misc-msgboard-box-top,
+        .et-misc-msgboard-box-bottom
+        {
+            /* reduce request to the image */
+            background-image: none;
+            /* unneccesary to display top and bottom as border-radius
+             * satisfy all we need */
+            display: none;
+        }
+        
+        .et-misc-msgboard-box-content
+        {
+            .et-misc-msgboard-border;
+        }
+    }
+    .et-misc-msgboard-box_white
+    {
+        .et-misc-msgboard-box-bg
+        {
+            /* RGBA for moderm browsers */
+            background-color: rgba(255, 255, 255, .95);
+            filter: none;
+        }
+    }
+}
+
+/* Skins */
+.et-misc-msgboard_beach3kids
+{
+    background: transparent url(#CacheSvr#/_imgs/online/sp2010/wp/beach_3kids.jpg) no-repeat 0 0;
+}
+
+/* Content Related Layout */
+.et-misc-msgboard-signup_ageblock13
+{
+    .et-misc-msgboard-box
+    {
+        float: left;
+        margin-top: 200px;
+        margin-left: 46px;
+        margin-bottom: 60px;
+        width: 420px;
+    }
+    .et-misc-msgboard-box-content
+    {
+        width: 304px;
+        padding: 20px 58px;
+        
+        p 
+        {
+            margin: 12px auto;
+            color: #000;
+            strong
+            {
+                font-size: 14px;
+            }
+            
+            a
+            {
+                color: #00527f;
+                text-decoration: underline;
+            }
+            a.et_btn
+            {
+                color: #494f54;
+                text-decoration: none;
+                &:hover
+                {
+                    text-decoration: none;
+                }
+                .et_btn_m
+                {
+                    font-size: 11px;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+html.et-lng-ar .et-misc-msgboard-signup_ageblock13
+{
+    .et-misc-msgboard-box-content
+    {
+        p
+        {
+            font-size: 13px; 
+            a.et_btn .et_btn_m
+            {
+                font-size: 13px;
+            }
+        }
+    }
+}
