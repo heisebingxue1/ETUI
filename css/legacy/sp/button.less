@@ -1,0 +1,63 @@
+/* 
+cssframework://etui/legacy/sp/button.rtl.less
+*/
+
+.et_btn_largeorange
+{
+    @pathOrangeBtn: url(#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange.png);
+
+    .et_btn_l 
+    {
+        background-image: @pathOrangeBtn; 
+        background-position: 0 0; 
+        height: 40px; width: 22px;
+    }
+    .et_btn_m 
+    {
+        background-image: @pathOrangeBtn; 
+        background-position: -22px 0; 
+        height: 40px; line-height: 36px;
+        color: #EEE;
+        font-weight: bold; font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .et_btn_r 
+    {
+        background-image: @pathOrangeBtn; 
+        background-position: -472px 0;
+        height: 40px; width: 28px;
+    }
+        
+    a
+    {
+        &:link span.et_btn_m { color: #EEE;}
+        &:visited span.et_btn_m { color: #EEE;}
+        &:active span.et_btn_m { color: #EEE;}
+        &:hover span.et_btn_m { color: #EEE;}
+    }
+}
+
+html.msie6
+{
+    .et_btn_largeorange
+    {
+        @pathOrangeBtnIe6: url("#CacheSvr#/_imgs/online/sp2010/et_home_billboard_btn_orange_ie6.gif");
+
+        .et_btn_l 
+        {
+            background-image: @pathOrangeBtnIe6; 
+
+        }
+        .et_btn_m 
+        {
+            background-image: @pathOrangeBtnIe6; 
+        }
+        .et_btn_r 
+        {
+            background-image: @pathOrangeBtnIe6; 
+        }
+
+    }
+
+}
