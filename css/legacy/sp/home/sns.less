@@ -1,8 +1,23 @@
 
 #et_home_sns_wrapper 
 { 
-    padding:0 0 20px 20px; 
+    padding: 0 7px 0px 20px; 
+    height: 1%;
+    &:after
+    {
+        clear:both; 
+        content:"."; 
+        display:block; 
+        height:20pt; 
+        visibility:hidden; 
+    }
     
+    .et_home_sns_container { 
+        margin: 0px; 
+        padding: 0px; 
+        float: right; 
+    } 
+
     h3 
     { 
         margin-left: 10px; 
@@ -13,7 +28,7 @@
     }
     .et_home_sns_item 
     { 
-        margin: 0 50px 0 10px; 
+        margin: 0 0 0 10px; 
         float: left; 
         span 
         { 

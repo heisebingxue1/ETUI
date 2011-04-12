@@ -2,92 +2,6 @@
 cssframework://etui/legacy/sp/3rdtier.rtl.less
 */
 
-/*
-Update them later:
-    #et_3rd_main_content .et_tabs_area_videos {overflow:hidden; padding:24px 0 33px 30px;}
-    #et_3rd_main_content .et_tabset {padding:0; margin:0; list-style:none; float:left; position:relative;}
-    #et_3rd_main_content .et_tabset li {background:url(#CacheSvr#/_imgs/online/sp2010/et_separator.gif) repeat-x; margin:0 0 -2px; float:left;}
-    #et_3rd_main_content .et_tabset li:first-child { background:none; }
-    #et_3rd_main_content .et_tabset li a {cursor:pointer; display:block; text-decoration:none; color:#4a565e !important; position:relative; padding:10px 0 0 15px;}
-    #et_3rd_main_content .et_tabset li a span {display:block; color:#92999e;}
-    #et_3rd_main_content .et_tabset li a:hover,
-    #et_3rd_main_content .et_tabset li a.active {background:url(#CacheSvr#/_imgs/online/sp2010/et_bg_tabset.gif) no-repeat; font-weight:bold; letter-spacing:-1px; text-decoration:none;}
-    #et_3rd_main_content .et_tabset li a:hover span,
-    #et_3rd_main_content .et_tabset li a.active span {font-weight:normal; letter-spacing:0;}
-    #et_3rd_main_content .et_tab_content {width:536px; float:left; margin:0 0 0 -2px; position:relative; background:url(#CacheSvr#/_imgs/online/sp2010/et_bg_tab_content_c.gif) repeat-y;}
-    #et_3rd_main_content .et_tab_content .et_holder { background:url(#CacheSvr#/_imgs/online/sp2010/et_bg_tab_content_t.gif) no-repeat; }
-    #et_3rd_main_content .et_tab_content .et_frame {background:url(#CacheSvr#/_imgs/online/sp2010/et_bg_tab_content_b.gif) no-repeat 0 100%; overflow:hidden; padding:48px 0 5px 16px;  }
-    #et_3rd_main_content .et_tab_content .et_3tier_demo_videos {padding:0; margin:0; list-style:none; overflow:hidden;}
-    #et_3rd_main_content .et_tab_content .et_3tier_demo_videos li{float:left; padding:0 15px 0; }
-    #et_3rd_main_content .et_tab_content .et_3tier_demo_videos img {display:block; margin:0 auto;}
-    #et_3rd_main_content .et_tab_content .et_3tier_demo_videos span {display:block; text-align:center; margin:-15px 0 0; text-decoration:underline;}
-    #et_3rd_main_content .et_tab_content .et_3tier_demo_videos a:hover span, .et_tab_content .et_video_list a:hover {text-decoration:none;}
-
-    #et_3rd_main_content .et_3rd_top_box {overflow:hidden; padding:0 20px 0 30px; margin:0; position:relative;}
-    
-    #et_3rd_main_content h2 {font:22px Arial, Helvetica, sans-serif; margin:0 0 35px;}
-        #et_3rd_main_content h2 strong {font-weight:bold;}
-
-    #et_3rd_main_content h3 { font: bolder 18px/normal Arial, Helvetica, sans-serif; margin:15px 0 15px; color: #4A565E; }
-    #et_3rd_main_content h3.et_first { margin-top: 0; }
-    #et_3rd_main_content h3:first-child { margin-top: 0; }
-        #et_3rd_main_content h3 strong {font-weight:bold;}
-
-    #et_3rd_main_content .et_3rd_container_news { margin:0; display:table; padding:0 0 30px; clear: both;}
-    #et_3rd_main_content .et_3rd_container_news:after{content:""; display:block; clear:both;}
-    #et_3rd_main_content .et_3rd_container_news .et_text_holder {vertical-align:middle; margin:0; display:table-cell;width:490px; }
-        #et_3rd_main_content .et_3rd_container_news .et_text_holder h4 {font:bold 14px Arial, Helvetica, sans-serif;}
-        * html #et_3rd_main_content .et_3rd_container_news .et_text_holder {float:left;}
-        *+html #et_3rd_main_content .et_3rd_container_news .et_text_holder {float:left;}
-        #et_3rd_main_content .et_3rd_container_news .et_text_holder p {font-size: 14px;}
-        
-        #et_3rd_main_content .et_3rd_container_news .et_image_holder_big {width:380px;}
-        * html #et_3rd_main_content .et_image_holder_left {float:left;}
-        * html #et_3rd_main_content .et_image_holder_right {float:right;}
-        *+html #et_3rd_main_content .et_image_holder_left {float:left;}
-        *+html #et_3rd_main_content .et_image_holder_right {float:right;}
-        * html #et_3rd_main_content .et_image_holder_left_ei { }
-        * html #et_3rd_main_content .et_image_holder_right { }
-        
-    #et_3rd_main_content .et_about-text { padding:3px 0 39px;  }
-        #et_3rd_main_content .et_about-text strong {  font-weight:bold; color:#4a565e; display:block; padding-bottom:18px; }
-        #et_3rd_main_content .et_about-text span { display:block; }
-            #et_3rd_main_content .et_about-text span a { color: #00527F; text-decoration:underline; }
-            #et_3rd_main_content .et_about-text span a:hover { text-decoration:none; }
-            
-            
-    #et_3rd_main_content .et_events-box { background: url(#CacheSvr#/_imgs/online/sp2010/et_bg_events_box_c.gif) repeat-y; }
-        #et_3rd_main_content .et_events-box .et_holder { background: url(#CacheSvr#/_imgs/online/sp2010/et_bg_events_box_t.gif) no-repeat; }
-        #et_3rd_main_content .et_events-box .et_frame { overflow:hidden; padding:11px 28px; background: url(#CacheSvr#/_imgs/online/sp2010/et_bg_events_box_b.gif) no-repeat 0 100%; }
-        #et_3rd_main_content .et_events-box h3 {  font-weight:bold; color:#4a565e; margin:0 0 31px; }
-        
-    #et_3rd_main_content .title-indent { margin:0 0 13px !important; }
-    #et_3rd_main_content .text-hold { position:relative; color:#4a565e;  margin-bottom:30px; }
-    
-        
-    #et_3rd_main_content .et_3rd_bottom_block {padding:0 30px 30px; overflow:hidden;width:750px;}
-        #et_3rd_main_content .et_3rd_bottom_block h3 {font:bold 18px Arial, Helvetica, sans-serif; margin:0 0 15px;}
-	
-
-    #et_3rd_main_content h3.et_italic_heading { font: italic 36px Arial,Helvetica,sans-serif !important; padding-left: 10px; }
-	
-	h2.title-indent { font: 22px Arial,Helvetica,sans-serif; margin: 0 0 13px !important; }
-
-    .et2_interior_section { padding: 0 30px 50px; position: relative; overflow: hidden;}
-    .msie6 .et2_interior_section {padding: 0 auto 50px; width: 750px; margin: 0;}
-    .et2_interior_section h3 { color: #4A565E; font-weight: bold; margin: 10px 0; }
-    .et2_interior_section h4 { color: #4A565E; font-weight: bold; margin: 10px 0; }
-    .et2_interior_section h4 span.number_title { background: url('#CacheSvr#/_imgs/online/sp2010/et_h3_number_bg.png') no-repeat scroll 0 0 transparent; display: block; float: left; margin: -4px 7px 0 0; padding: 3px 0 0; text-align: center; font-weight: bold; color: #4A565E; }
-
-    .et2_interior_section .prices-SectionCDE h3{ margin-top: 45px;}
-    .float_left_overlay { position: relative; float: left; margin-left: -30px; left: 30px; }
-    .msie6 .float_left_overlay {margin-left: 0; left: 0;}
-    .float_right_overlay { position: relative; float: right; margin-right: -30px; right: 30px; }
-    
-    .et_button_back_news { background:url('#CacheSvr#/_imgs/online/sp2010/et_bg_button.gif') no-repeat; margin:0 0 0 auto; }
-*/
-
-
 html.et-lng-rtl
 {
     /* TODO: put it to interior? */
@@ -106,15 +20,24 @@ html.et-lng-rtl
     
     #et_3rd_main_content
     {
+        padding-right: 30px;
+        padding-left: 15px;
         .et_3rd_align_left { float: right; }
         .et_3rd_align_right { float: left; }
         .et_3rd_intro { padding-left: 30px; padding-right: 15px;}
-        .et_3rd_into_alt 
+        
+        .et_3rd_intro_alt 
         { 
             padding-left: 0; padding-right: 30px;
             margin-left:-15px; margin-right: -30px;
         }
 
+        /* stretch width to fix the wrapper's width */
+        .et_3rd_fullwidth 
+        {
+            margin:0 -30px 0 -15px !important;
+        }
+    
         .et_3rd_title
         {
             padding-left: 0;
@@ -337,6 +260,83 @@ html.et-lng-rtl
     }
     
     /* + The Team - End */
+    
+    /* + Online Course + Begin */
+    
+    #et_2nd_school_intro_menu 
+    { 
+        float: right; 
+        .menu_item
+        {
+            p
+            {
+                padding-left: 20px;
+                padding-right: 32px;
+            }
+            .new_item
+            {
+                background-position: 178px  10px;
+            }
+        }
+    }
+    #et_2nd_school_intro_contents { float: right; }
+    .et_2nd_school_intro_menu_arror 
+    { 
+        left: auto; right: 208px; 
+        background-image: url(#CacheSvr#/_imgs/online/sp2010/et_arrow_lightgray_left.png);
+    }
+    /* + Online Course + End */
+    
+    /* + Demos - Begin */
+    
+    #et_3rd_main_content
+    {
+        .et_tabs_area_videos
+        {
+            padding-right: 30px;
+            padding-left: 0;
+            
+            .et_tab_content,
+            .et_tabset
+            {
+                float: right;
+            }
+            
+            .et_tab_content
+            {
+                margin-right: -2px;
+                margin-left: auto;
+            }
+            
+            .et_tabset li a
+            {
+                padding-right: 15px;
+                padding-left: 0;
+                &:hover,
+                &.active
+                {
+                    background-image: url(#CacheSvr#/_imgs/online/sp2010/et_bg_tabset_rtl.gif);
+                }
+            }
+        }
+    }
+    
+    /* + Demos - End */
+    
+    /* + Learn - Begin */
+    
+    .et_3rd_learn #sectionA .et_interior_section_text_left 
+    {
+        margin-left: -50px; 
+        margin-right: auto;
+    }
+    .et_3rd_learn #sectionB .et_interior_section_text_right 
+    {
+        margin-right: -50px; 
+        margin-left: auto;
+    }
+    
+    /* + Learn - End */
     
     /* + Other - Begin */
     
