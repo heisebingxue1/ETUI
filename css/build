@@ -10,6 +10,8 @@ pathEtui=$pathOut'etui/'
 #Define binaries
 binLessc=$pathBin'lessc'
 
+addParams=''
+
 #Constants
 DEFAULT_ENTRY=etui
 
@@ -20,6 +22,14 @@ then
     source=`dirname $0`'/'$1
 fi
 
+if [ $# -ge 2 ]
+then
+    if [ "$2" == "-x" ]
+    then
+        addParams=" $2"
+    fi
+fi
+
 target=$pathOut$source
 
 #Build salespage css
@@ -27,6 +37,7 @@ target=$pathOut$source
 echo Source:        $source
 echo Source Path:   `dirname $source`'/'
 echo Target:        $target
+echo Additions:     $addParams
 
 if [ -d `dirname $target` ]
 then
@@ -39,6 +50,6 @@ else
 fi
     
 echo building css
-node $binLessc $source.less > $target'.css'
+node $binLessc$addParams $source.less > $target'.css'
 echo building rtl css
-node $binLessc $source.rtl.less > $target'.rtl.css'
+node $binLessc$addParams $source.rtl.less > $target'.rtl.css'
