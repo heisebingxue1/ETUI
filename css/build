@@ -19,7 +19,7 @@ source=$DEFAULT_ENTRY
 
 if [ $# -ge 1 ]
 then
-    source=`dirname $0`'/'$1
+    source='/'$1
 fi
 
 if [ $# -ge 2 ]
@@ -50,6 +50,6 @@ else
 fi
     
 echo building css
-node $binLessc$addParams $source.less > $target'.css'
+node $binLessc$addParams `dirname $0`$source.less > $target'.css'
 echo building rtl css
-node $binLessc$addParams $source.rtl.less > $target'.rtl.css'
+node $binLessc$addParams `dirname $0`$source.rtl.less > $target'.rtl.css'
