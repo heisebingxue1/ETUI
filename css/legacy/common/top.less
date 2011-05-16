@@ -1,0 +1,256 @@
+
+#et_top_operation_pane 
+{ 
+	position:relative; 
+	zoom: 1; 
+	background: #293336 url(#cacheSvr#/_imgs/ui/common/topbox/bg-top.png) no-repeat 100% 0%; 
+	
+	.et_close_btn
+	{
+		color:#999; 
+		position:absolute; 
+		padding:0 20px 0 0; 
+		right:10px; 
+		top:10px; 
+		cursor:pointer; 
+		line-height:18px; 
+		background:url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat right -223px;
+	}
+	
+	.et_top_operation_panel 
+	{
+		background: transparent url(#cacheSvr#/_imgs/ui/common/topbox/grain-ef.png) no-repeat 0% 0%;
+	}
+}
+
+#et_top_changelng_panel 
+{ 
+	display:none; 
+	padding:20px 20px 20px 32px; 
+	color:#fff; 
+	h2 
+	{ 
+		font-size:20px; 
+		font-weight:normal; 
+		color:#fff; 
+		padding:10px 0;
+	}
+	
+	.et_top_changelng_items
+	{ 
+		/* Change Language Panel */
+		float:left; 
+		width:150px;
+		
+		li
+		{ 
+			font-size:12px;
+			float:none;
+			margin:5px 0;
+			color:#999;
+			cursor: pointer;
+			
+			&:hover { color:#fff; text-decoration:underline; }
+		}
+	}
+}
+    
+#et_top_login_panel 
+{
+	display:none; padding:20px;  color:#92999e;
+	
+	h2 
+	{
+		font-size:20px; 
+		font-weight:normal; 
+		color:#fff; 
+		padding:10px 0; 
+		line-height:40px; 
+		padding:0 0 0 50px; 
+		background:url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -816px -84px;
+	}
+	
+	a
+	{
+		&:link{color:#92999e; text-decoration:underline; font-weight:bold;}
+		&:hover{color:#92999e; text-decoration:underline; font-weight:bold;}
+		&:visited{color:#92999e; text-decoration:underline; font-weight:bold;}
+		&:active{color:#92999e; text-decoration:underline; font-weight:bold;}
+		
+		.et_btn a
+		{
+			&link, &hover { text-decoration:none; }
+		}
+	}
+
+	.et_toplogin_left 
+	{
+		float:left; 
+		width:500px; 
+	}
+	.et_toplogin_right
+	{
+		float:right; 
+		width:230px; 
+		padding:10px 0 0 0; 
+		text-align:left;
+	}	
+	.field-validation-error { max-width: 180px}
+	.et_toplogin_forgotpwd { margin: 10px 0 0 30px; display:inline;float:right; padding-right:174px}
+}
+
+
+
+#et_header_shortcuts 
+{ 
+	position:absolute; right:10px; 
+	
+	.et_header_shortcut_normal { float:left; cursor:pointer; font-size:10px; line-height:25px; display:inline; }
+	.et_header_shortcut_active { float:left; cursor:pointer; font-size:10px; line-height:25px; display:inline; color:#fff; }
+	.et_header_shortcut_textlink_normal 
+	{ 
+		/* For arabic site only, display a quick language change link on the right */
+		float: left; 
+		font-size:10px; 
+		line-height:18px; 
+		margin: auto 6px; 
+		display:inline; 
+		a { font-size: 10px; }
+	}
+	.et_header_shortcut_l 
+	{ 
+		width:10px; 
+		display:inline; 
+		height:20px; 
+		overflow:hidden; 
+		background:url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -12px -12px; 
+		float:left;
+	}
+	.et_header_shortcut_r 
+	{ 
+		width:10px; display:inline; height:20px; overflow:hidden; 
+		background:url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -36px -12px; 
+		float:left;
+	}
+	.et_header_shortcut_m 
+	{ 
+		height:20px; display:inline; overflow:hidden; 
+		background: url(#CacheSvr#/_imgs/online/sp2010/etsprites_x.png) repeat-x 0 -200px; 
+		line-height:17px; padding:0 10px; float:left; color: #8F8F8F; 
+		font-size: 11px;
+		a 
+		{
+			font-size: 11px; color: #8F8F8F; line-height:17px;
+			&:link{color:#8F8F8F; text-decoration:none;}
+			&:visited{color:#8F8F8F; text-decoration:none;}
+			&:hover{color:#8F8F8F; text-decoration:none;}
+			&:active{color:#8F8F8F; text-decoration:none;}
+		}
+	}
+	
+	.et_header_shortcut_active
+	{
+		.et_header_shortcut_l
+		{
+			background:url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -60px -12px;
+		}
+		.et_header_shortcut_r 
+		{
+			background:url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -84px -12px;
+		}
+		.et_header_shortcut_m
+		{
+			background: url(#CacheSvr#/_imgs/online/sp2010/etsprites_x.png) repeat-x 0 -250px; color:#fff;
+		}
+	}
+}
+    
+.et-lng-ch #et_header_shortcuts .et_header_shortcut_m, .et-lng-ch .et_header_shortcut_m a { font-size: 12px; }
+.et-lng-cs #et_header_shortcuts .et_header_shortcut_m, .et-lng-cs .et_header_shortcut_m a { font-size: 12px; }
+.et-lng-ko #et_header_shortcuts .et_header_shortcut_m, .et-lng-ko .et_header_shortcut_m a { font-size: 12px; }
+.et-lng-ja #et_header_shortcuts .et_header_shortcut_m, .et-lng-ja .et_header_shortcut_m a { font-size: 12px; }
+.et-lng-th #et_header_shortcuts .et_header_shortcut_m, .et-lng-th .et_header_shortcut_m a { font-size: 12px; }
+
+
+/* Header Links Starts */
+
+#et_header_links { float:right; text-align:right; padding:30px 0 0 0; }
+*+html #et_top_operation_pane #et_header_links { padding: 0; clear: both;}
+* html #et_top_operation_pane #et_header_links { clear: both;}
+
+    .et_header_links_placeHolder { height: 30px; width: 40px; visibility: hidden;}
+
+    #et_header_phone {float:right; color:#8F8F8F; clear:both; font-size:20px; padding:0 10px 0px 15px;  display:inline; line-height:29px; background: url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -816px -6px; }
+    * html #et_header_phone {background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+
+    #et_header_staticlinks {float:right; clear:both; text-align: left; }
+    #et_header_staticlinks ul li { padding:0 10px 0 0; display: inline;}
+    #et_header_staticlinks ul li a{ padding:0 0 0 8px; background: url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -12px -43px; }
+    * html #et_header_staticlinks ul li a{background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+    #et_header_staticlinks ul li a:link{color:#8F8F8F; text-decoration: none;}
+    #et_header_staticlinks ul li a:visited{color:#8F8F8F;text-decoration: none;}
+    #et_header_staticlinks ul li a:hover{color:#293336;text-decoration: none;}
+    #et_header_staticlinks ul li a:active{color:#8F8F8F;text-decoration: none;}
+
+/* Header Links Ends */
+
+html.msie6
+{
+	#et_top_operation_pane 
+	{ 
+		background-image: none; 
+		
+		.et_close_btn 
+		{
+			background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);
+		}
+	}
+	
+	.et_top_operation_panel 
+	{ 
+		background-image: none; 
+	}
+	
+	#et_top_login_panel h2 {background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+	
+	#et_header_shortcuts
+	{
+		.et_header_shortcut_l{background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+		.et_header_shortcut_m {background-image: url(#CacheSvr#/_imgs/online/sp2010/etsprites_x8.png);}
+		.et_header_shortcut_r{background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+		
+		.et_header_shortcut_active 
+		{
+			.et_header_shortcut_r{background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+			.et_header_shortcut_l{background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+			.et_header_shortcut_m {background-image: url(#CacheSvr#/_imgs/online/sp2010/etsprites_x8.png);}
+		}
+	}
+}
+
+html.msie7 
+{
+	.et_top_changelng_items li:hover 
+	{
+		/* when mouse over on ie7, the background display with a slightly lighter color, hasLayout fixes it */
+		zoom:1 ;
+	}
+}
+
+html.msie6, html.msie7 
+{
+	#et_top_changelng_panel h2 { zoom: 1;}
+}
+
+html.ios
+{
+	#et_top_changelng_panel h2 { font-size: 18px;}
+	
+	.et_top_changelng_items li 
+	{ 
+		/* font size on ios will overall larger than the one in pc or mac, iOS sucks */
+		background-image: none; 
+		font-size: 10px; 
+	}
+}
+    
