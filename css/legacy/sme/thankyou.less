@@ -150,6 +150,54 @@ cssframework://etui/legacy/sme/thankyou.less
 				margin-left: 10px;
 				float: left;
 			}
+			span
+			{
+				background:transparent url("/_imgs/sme/co/icon_green_8.png") no-repeat;
+			}
 		}
 	}
+}
+
+@media print
+{
+	.msie6
+	{
+		#et_lyt_content
+		{
+			.et-sme-thankyou-guide-steps
+			{
+				div
+				{
+					margin: 0;
+					width: auto;
+				}
+				p
+				{
+					width: 145px;
+					margin: 0;
+				}
+			}
+		}
+
+		.et-sme-thankyou-summary
+		{
+			width: 645px;
+		}
+	}
+
+	#et-page
+	{
+		float: none;
+        margin: 0;
+        width: 100%;
+	}
+
+	#et-header,#et-footer,#et_lyt_content_mainpane,#et_lyt_floatsidebar,.et-navshadow-holder,.et_btn_lightorange
+    {display: none;}
+	
+	.et-sme-thankyou-summary
+    {
+		margin: 0;
+        padding: 0;
+    }
 }
