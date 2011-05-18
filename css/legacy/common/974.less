@@ -5,110 +5,112 @@ cssframework://etui/legacy/common/974.less
 /* this css over writes the common master page and stretch the header to
  * full width and body to 974px */
 
-@et-sme-section-padding-large: 42px;
-@et-sme-section-padding-medium: 24px;
-@et-sme-section-padding-small: 12px;
-@et-sme-section-corner-size: 13px;
-@et-sme-content-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.23);
+@et-section-padding-large: 42px;
+@et-section-padding-medium: 24px;
+@et-section-padding-small: 12px;
+@et-section-corner-size: 12px;
+@et-content-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.23);
+@et-content-width: 947px;
 
-.et-sme-section-corner-bottom
+.et-section-corner-bottom
 {
-	-webkit-border-bottom-right-radius: @et-sme-section-corner-size;
-	-webkit-border-bottom-left-radius: @et-sme-section-corner-size;
-	-moz-border-radius-bottomright: @et-sme-section-corner-size;
-	-moz-border-radius-bottomleft: @et-sme-section-corner-size;
-	border-bottom-right-radius: @et-sme-section-corner-size;
-	border-bottom-left-radius: @et-sme-section-corner-size;
+	-webkit-border-bottom-right-radius: @et-section-corner-size;
+	-webkit-border-bottom-left-radius: @et-section-corner-size;
+	-moz-border-radius-bottomright: @et-section-corner-size;
+	-moz-border-radius-bottomleft: @et-section-corner-size;
+	border-bottom-right-radius: @et-section-corner-size;
+	border-bottom-left-radius: @et-section-corner-size;
 }
-.et-sme-section-corner-top
+.et-section-corner-top
 {
-	-webkit-border-top-right-radius: @et-sme-section-corner-size;
-	-webkit-border-top-left-radius: @et-sme-section-corner-size;
-	-moz-border-radius-topright: @et-sme-section-corner-size;
-	-moz-border-radius-topleft: @et-sme-section-corner-size;
-	border-top-right-radius: @et-sme-section-corner-size;
-	border-top-left-radius: @et-sme-section-corner-size;
+	-webkit-border-top-right-radius: @et-section-corner-size;
+	-webkit-border-top-left-radius: @et-section-corner-size;
+	-moz-border-radius-topright: @et-section-corner-size;
+	-moz-border-radius-topleft: @et-section-corner-size;
+	border-top-right-radius: @et-section-corner-size;
+	border-top-left-radius: @et-section-corner-size;
 }
 
-.et-sme-section-center
+.et-section-center
 {
-	width: 974px;
+	width: @et-content-width;
 	padding: 0;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.et-sme-section-basic
+.et-section-basic
 {
-	.et-sme-section-center;
-	-webkit-box-shadow: @et-sme-content-shadow;
-	-moz-box-shadow: @et-sme-content-shadow;
-	box-shadow: @et-sme-content-shadow;
+	.et-section-center;
+	-webkit-box-shadow: @et-content-shadow;
+	-moz-box-shadow: @et-content-shadow;
+	box-shadow: @et-content-shadow;
+	background-color: #FFF;
 }
 
-.et-sme-section-nonhtml5
+.et-section-nonhtml5
 {
 	border: 1px solid #EEE;
 }
 
 /* Section Types { */
-.et-sme-section
+.et-section
 {
-	.et-sme-section-basic;
+	.et-section-basic;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border: none;
-	.et-sme-section-corner-top;
-	.et-sme-section-corner-bottom;
+	.et-section-corner-top;
+	.et-section-corner-bottom;
 }
 
-.et-sme-section-closing
+.et-section-closing
 {	
 	margin-bottom: 20px;
-	.et-sme-section-basic;
-	.et-sme-section-corner-bottom;
+	.et-section-basic;
+	.et-section-corner-bottom;
 }
 
-.et-sme-section-opening
+.et-section-opening
 {	
 	margin-top: 20px;
-	.et-sme-section-basic;
-	.et-sme-section-corner-top;
+	.et-section-basic;
+	.et-section-corner-top;
 }
 /* Section Types } */
 
 /* Section Inner Wrapper Types { */
-.et-sme-secwrap-large
+.et-secwrap-large
 {
-	margin: @et-sme-section-padding-large;
+	margin: @et-section-padding-large;
 }
 
-.et-sme-secwrap-medium
+.et-secwrap-medium
 {
-	margin: @et-sme-section-padding-medium;
+	margin: @et-section-padding-medium;
 }
 
-.et-sme-secwrap-small
+.et-secwrap-small
 {
-	margin: @et-sme-section-padding-small;
+	margin: @et-section-padding-small;
 }
 /* Section Inner Wrapper Types } */
 
 html.non-html5browser
 {
-	.et-sme-section
+	.et-section
 	{
-		.et-sme-section-nonhtml5;
+		.et-section-nonhtml5;
 	}
 	
-	.et-sme-section-closing
+	.et-section-closing
 	{
-		.et-sme-section-nonhtml5;
+		.et-section-nonhtml5;
 	}
 	
-	.et-sme-section-opening
+	.et-section-opening
 	{
-		.et-sme-section-nonhtml5;
+		.et-section-nonhtml5;
 	}
 }
 
@@ -132,7 +134,7 @@ html.non-html5browser
 			ul.etm-tabs
 			{
 				/* make the nav 974px */
-				width: 974px;
+				width: @et-content-width;
 				margin: 0 auto;
 			}
 		}
@@ -140,28 +142,14 @@ html.non-html5browser
 		#et-content
 		{
 			background: #FFF ;
-			.et-sme-section-center;
+			.et-section-center;
 		}
 		
 		#et-footer
 		{
-			.et-sme-section-center;
-			.et-sme-upper
-			{
-				.et-sme-links
-				{
-					
-				}
-				
-				.et-sme-contacts
-				{
-					
-				}
-			}
+			.et-section-center;
 			
-			.et-sme-copyright
-			{
-			}
+			background-color: transparent;
 			
 		}
 	}
@@ -181,12 +169,12 @@ html.non-html5browser
 		{
 			#et-content
 			{
-				.et-sme-section-nonhtml5;
+				.et-section-nonhtml5;
 			}
 			
 			#et-footer
 			{
-				.et-sme-section-nonhtml5;
+				.et-section-nonhtml5;
 			}
 		}
 	}
