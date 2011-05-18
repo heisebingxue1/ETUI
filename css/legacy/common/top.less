@@ -1,9 +1,13 @@
 
+@etTopOperationShadow: inset 5px 5px 5px 0 rgba(0, 0, 0, 0.3);
 #et_top_operation_pane 
 { 
 	position:relative; 
 	zoom: 1; 
-	background: #293336 url(#cacheSvr#/_imgs/ui/common/topbox/bg-top.png) no-repeat 100% 0%; 
+	background: #293336 repeat-x 100% 0%; 
+	-webkit-box-shadow: @etTopOperationShadow;
+	-moz-box-shadow: @etTopOperationShadow;
+	box-shadow: @etTopOperationShadow;
 	
 	.et_close_btn
 	{
@@ -175,18 +179,18 @@
 /* Header Links Starts */
 
 #et_header_links { float:right; text-align:right; padding:30px 0 0 0; }
-*+html #et_top_operation_pane #et_header_links { padding: 0; clear: both;}
-* html #et_top_operation_pane #et_header_links { clear: both;}
+html.msie7 #et_top_operation_pane #et_header_links { padding: 0; clear: both;}
+html.msie6 #et_top_operation_pane #et_header_links { clear: both;}
 
     .et_header_links_placeHolder { height: 30px; width: 40px; visibility: hidden;}
 
     #et_header_phone {float:right; color:#8F8F8F; clear:both; font-size:20px; padding:0 10px 0px 15px;  display:inline; line-height:29px; background: url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -816px -6px; }
-    * html #et_header_phone {background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+    html.msie6 #et_header_phone {background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
 
     #et_header_staticlinks {float:right; clear:both; text-align: left; }
     #et_header_staticlinks ul li { padding:0 10px 0 0; display: inline;}
     #et_header_staticlinks ul li a{ padding:0 0 0 8px; background: url(#CacheSvr#/_imgs/online/sp2010/etsprite32.png) no-repeat -12px -43px; }
-    * html #et_header_staticlinks ul li a{background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
+    html.msie6 #et_header_staticlinks ul li a{background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
     #et_header_staticlinks ul li a:link{color:#8F8F8F; text-decoration: none;}
     #et_header_staticlinks ul li a:visited{color:#8F8F8F;text-decoration: none;}
     #et_header_staticlinks ul li a:hover{color:#293336;text-decoration: none;}
