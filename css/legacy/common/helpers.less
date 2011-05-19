@@ -27,6 +27,11 @@ cssframework://etui/legacy/common/helpers.less
 	height: 0; 
 	display: block;
 }
+html.msie6 .et_helper_clearline 
+{ 
+	/* hasLayout cause clearline to stretch, this fixes it */
+	width: 0;
+}
 
 .et-helper-reset 
 {

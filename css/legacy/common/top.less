@@ -169,12 +169,21 @@
 	}
 }
     
-.et-lng-ch #et_header_shortcuts .et_header_shortcut_m, .et-lng-ch .et_header_shortcut_m a { font-size: 12px; }
-.et-lng-cs #et_header_shortcuts .et_header_shortcut_m, .et-lng-cs .et_header_shortcut_m a { font-size: 12px; }
-.et-lng-ko #et_header_shortcuts .et_header_shortcut_m, .et-lng-ko .et_header_shortcut_m a { font-size: 12px; }
-.et-lng-ja #et_header_shortcuts .et_header_shortcut_m, .et-lng-ja .et_header_shortcut_m a { font-size: 12px; }
-.et-lng-th #et_header_shortcuts .et_header_shortcut_m, .et-lng-th .et_header_shortcut_m a { font-size: 12px; }
-
+html.et-lng-ch, 
+html.et-lng-cs,
+html.et-lng-ko,
+html.et-lng-ja,
+html.et-lng-th 
+{
+	#et_header_shortcuts
+	{
+		.et_header_shortcut_m, 
+		.et_header_shortcut_m a 
+		{
+			font-size: 12px; 
+		}
+	}
+}
 
 /* Header Links Starts */
 
@@ -208,12 +217,14 @@ html.msie6
 		{
 			background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);
 		}
+		
+		.et_top_operation_panel 
+		{ 
+			background-image: none; 
+		}
 	}
 	
-	.et_top_operation_panel 
-	{ 
-		background-image: none; 
-	}
+	
 	
 	#et_top_login_panel h2 {background-image:url(#CacheSvr#/_imgs/online/sp2010/etsprite8.png);}
 	
