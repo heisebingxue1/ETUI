@@ -34,7 +34,6 @@ cssframework://etui/legacy/common/974.less
 .et-section-center
 {
 	width: @et-content-width;
-	padding: 0;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -42,6 +41,7 @@ cssframework://etui/legacy/common/974.less
 .et-section-basic
 {
 	.et-section-center;
+	padding: 0;
 	-webkit-box-shadow: @et-content-shadow;
 	-moz-box-shadow: @et-content-shadow;
 	box-shadow: @et-content-shadow;
@@ -135,11 +135,18 @@ html.non-html5browser
 			.et-head
 			{
 				.et-section-center;
+				padding: 0;
+				
 				#et_header_links { margin-top: 20px;}
 			}
 			#et_top_operation_pane
 			{
-				.et-section-center;
+				width: 100%;
+				
+				#et_top_changelng_panel
+				{
+					.et-section-center;
+				}
 			}
 		}
 			
@@ -148,12 +155,14 @@ html.non-html5browser
 			#et-menu
 			{
 				.et-section-center;
+				padding: 0;
 			}
 		}
 		
 		#et-content
 		{
 			background: transparent ;
+			padding: 0;
 			.et-section-center;
 		}
 		
@@ -161,6 +170,7 @@ html.non-html5browser
 		{
 			.et-section-center;
 			
+			padding: 0;
 			border: none;
 			background-color: transparent;
 			
