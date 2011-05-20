@@ -8,41 +8,131 @@ cssframework://etui/legacy/smesp/home.less
 	
 	.et-sme-top
 	{
-		margin-right: 0;
-		#et-sme-home-topscreen-desc
+		background: #FFF url(/_imgs/sme/sp/mainstagebg.jpg) 0 bottom repeat-x;
+		#et-sme-home-topscreen
 		{
-			width: 316px; 
-			font-size: 14px;
-			
-			h1
+			margin-right: 0;
+			#et-sme-home-topscreen-desc
 			{
-				font-size: 2em;
-				line-height: 1em;
-				font-weight: normal;
+				width: 316px; 
+				font-size: 14px;
+				
+				h1
+				{
+					font-size: 2em;
+					line-height: 1em;
+					font-weight: normal;
+				}
+				p
+				{
+					margin: 5px auto;
+				}
 			}
-			p
+			#et-sme-home-topscreen-img
 			{
-				margin: 5px auto;
+				width: 610px;
 			}
 		}
-		#et-sme-home-topscreen-img
-		{
-			width: 610px;
-		}
-	}
-	
-	.et-sme-bottom
-	{
 		#et-sme-home-4reason
 		{
+			margin-top: @et-section-padding-small;
+			margin-bottom: @et-section-padding-small;
 			.et-sme-reason
 			{
-				width: 222px;
+				width: 190px;
+				margin-right: 32px;
+				
 				float: left;
 				.et-sme-icon-wrapper
 				{
 					text-align: center;
 				}
+				
+				h3
+				{
+					font-weight: bolder;
+				}
+			}
+		}
+		#et-sme-home-trustedbrands
+		{
+			width: 926px;
+			height: 104px;
+			background: transparent url(/_imgs/sme/sp/trustedbrandshd.png) 0 0 no-repeat;
+		}
+	}
+	
+	.et-sme-bottom
+	{
+		background: #FFF url(/_imgs/sme/sp/mainstagebg.jpg) 0 top repeat-x;
+		
+		table#et-sme-home-whatandwhy
+		{
+			width: 100%;
+			margin-top: 1px;
+			
+			td, th
+			{
+				width: 50%;
+				border: 1px solid #EDEEEE;
+				border-top: none;
+				.et-sme-inner-content
+				{
+					width: 415px;
+				}
+			}
+			
+			th
+			{
+				border-bottom: none;
+				padding-top: 40px;
+				padding-bottom: 20px;
+				font-weight: bolder;
+				font-size: 14px;
+				color: #282828;
+			}
+			
+			td.et-sme-left, th.et-sme-left
+			{
+				padding-left: 46px;
+				border-left: none;
+				.et-sme-inner-content
+				{
+					float: right;
+					margin-right: 22px;
+				}
+			}
+			
+			td.et-sme-right, th.et-sme-right
+			{
+				border-right: none;
+				padding-left: 22px;
+				.et-sme-inner-content
+				{
+					float: left;
+				}
+			}
+		}
+		
+		#et-sme-home-getstarted
+		{
+			margin: @et-section-padding-medium @et-section-padding-large;
+			font-size: 20px;
+			line-height: 20px;
+		}
+	}
+}
+
+html.msie6
+{
+	#et-sme-home
+	{
+		.et-sme-top
+		{
+		
+			#et-sme-home-trustedbrands
+			{
+				background-image: url(/_imgs/sme/sp/trustedbrands.png);
 			}
 		}
 	}
