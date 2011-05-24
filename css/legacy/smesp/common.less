@@ -1,37 +1,45 @@
- /* font-sprite relocation */
+/* 
+cssframework://etui/legacy/smesp/common.less
+*/
+
+@et-color-gray: #b6bbbe;
+@et-color-blue: #0097d3;
+@et-color-lightblue: #98c5e2;
+
+/* font-sprite relocation */
 .et-sme-discarrow-r
 {
 	font-size: 130%;
 }
 .et-sme-linkfs
 {
-	color: #0097d3;
+	color: @et-color-blue;
 	font-size: 110%;
 	vertical-align: top;
 }
 
 
-.et-section a,
-.et-section-closing a,
-.et-section-opening a
+.et-section a.et-sme-linkbutton,
+.et-section-closing a.et-sme-linkbutton,
+.et-section-opening a.et-sme-linkbutton
 {
-	color: #0097d3;
+	color: @et-color-blue;
 	text-decoration: underline;
 	&:link
 	{
-		color: #0097d3;
+		color: @et-color-blue;
 	}
 	&:visited
 	{
-		color: #0097d3;
+		color: @et-color-blue;
 	}
 	&:active
 	{
-		color: #0097d3;
+		color: @et-color-blue;
 	}
 	&:hover
 	{
-		color: #0097d3;
+		color: @et-color-blue;
 	}
 }
 .et-section a.et-sme-linkbutton,

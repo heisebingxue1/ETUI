@@ -32,6 +32,11 @@ cssframework://etui/legacy/smesp/home.less
 			{
 				width: 610px;
 			}
+			
+			.et-button
+			{
+				margin-top: @et-section-padding-small;
+			}
 		}
 		#et-sme-home-4reason
 		{
@@ -59,6 +64,34 @@ cssframework://etui/legacy/smesp/home.less
 			width: 926px;
 			height: 104px;
 			background: transparent url(/_imgs/sme/sp/trustedbrandshd.png) 0 0 no-repeat;
+			
+			#et-sme-home-trustedbrands-text
+			{
+				margin: (@et-section-padding-small + 5) auto 0 auto;
+				width: 870px;
+				
+				.et-sme-left
+				{
+					float: left;
+					color: @et-color-gray;
+					font-weight: bolder;
+				}
+				
+				.et-sme-right
+				{
+					float: right;
+					color: @et-color-lightblue;
+					font-size: 0.917em;
+					text-decoration: underline;
+				}
+			}
+			
+			img
+			{
+				clear: both;
+				display: block;
+				margin: (@et-section-padding-small) auto auto auto;
+			}
 		}
 	}
 	
@@ -76,9 +109,35 @@ cssframework://etui/legacy/smesp/home.less
 				width: 50%;
 				border: 1px solid #EDEEEE;
 				border-top: none;
+				vertical-align: top;
+			}
+			
+			td
+			{
+				padding-bottom: @et-section-padding-large;
 				.et-sme-inner-content
 				{
 					width: 415px;
+					margin: @et-section-padding-small 0 ;
+					
+					.et-sme-left
+					{
+						float: left;
+						margin-right: @et-section-padding-small;
+					}
+					.et-sme-right
+					{
+						float: left;
+						h3
+						{
+							font-weight: bolder;
+							line-height: 1.417em;
+						}
+						p
+						{
+							line-height: 1.417em;
+						}
+					}
 				}
 			}
 			
@@ -100,6 +159,15 @@ cssframework://etui/legacy/smesp/home.less
 				{
 					float: right;
 					margin-right: 22px;
+					
+					img.et-sme-left
+					{
+						width: 109px;
+					}
+					div.et-sme-right
+					{
+						width: 294px;
+					}
 				}
 			}
 			
@@ -109,7 +177,20 @@ cssframework://etui/legacy/smesp/home.less
 				padding-left: 22px;
 				.et-sme-inner-content
 				{
-					float: left;
+					float: none;
+					display: table;
+					
+					img.et-sme-left
+					{
+						width: 66px;
+					}
+					div.et-sme-right
+					{
+						width: 337px;
+						float: none;
+						display: table-cell;
+						vertical-align: middle;
+					}
 				}
 			}
 		}
@@ -118,7 +199,13 @@ cssframework://etui/legacy/smesp/home.less
 		{
 			margin: @et-section-padding-medium @et-section-padding-large;
 			font-size: 20px;
-			line-height: 20px;
+			line-height: 24px;
+			
+			.et-button
+			{
+				margin-top: 2px;
+				margin-bottom: 2px;
+			}
 		}
 	}
 }
@@ -133,6 +220,37 @@ html.msie6
 			#et-sme-home-trustedbrands
 			{
 				background-image: url(/_imgs/sme/sp/trustedbrands.png);
+			}
+		}
+	}
+}
+
+html.msie7, html.msie6
+{
+	#et-sme-home
+	{
+		.et-sme-bottom
+		{
+			table#et-sme-home-whatandwhy
+			{
+				td.et-sme-right
+				{
+				
+					.et-sme-inner-content
+					{
+						position: relative;
+						div.et-sme-right
+						{
+							position: absolute;
+							top: 50%;
+							blockquote
+							{
+								position: relative;
+								top: -50%;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

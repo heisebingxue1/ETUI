@@ -2,7 +2,7 @@
 {
 	#et-footer
 	{
-		color: #b6bbbe;
+		color: @et-color-gray;
 		#et-sme-footer-socialicons
 		{
 			margin-top: 4px;
@@ -33,9 +33,15 @@
 					
 				}
 				
-				.et-sme-social
+				#et-sme-footer-social
 				{
-					
+					#et-sme-footer-socialicons
+					{
+						.et-socialicons
+						{
+							margin-right: 8px;
+						}
+					}
 				}
 			}
 			
@@ -44,7 +50,7 @@
 				float: left;
 				width: 173px;
 				padding-left: 5px;
-				color: #b6bbbe;
+				color: @et-color-gray;
 				line-height: 16px;
 				
 				h5

@@ -1,0 +1,163 @@
+/* require: 974 */
+.et-button
+{
+	display: inline-block;
+	color: #FFF;
+	cursor: pointer;
+	
+	&:link
+	{
+		color: #FFF;
+	}
+	&:visited
+	{
+		color: #FFF;
+	}
+	&:active
+	{
+		color: #FFF;
+	}
+	&:hover
+	{
+		color: #FFF;
+		text-decoration: none;
+	}
+	vertical-align: middle;
+}
+
+.et-button-orange
+{
+	@et-button-orange-height: 2.25em;
+	@et-button-orange-thin: 0.083em;
+	@et-button-orange-thiner: 0.042em;
+	
+	.et-section-corner-top;
+	.et-section-corner-bottom;
+	/****
+	 * Gradient Effect 
+	 ****/
+	 
+	/* Old browsers */
+	background: rgb(254,125,0); 
+	/* FF3.6+ */
+	background: -moz-linear-gradient(top, rgba(254,125,0,1) 10%, rgba(206,62,9,1) 100%); 
+	/* Chrome,Safari4+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(254,125,0,1)), color-stop(100%,rgba(206,62,9,1))); 
+	/* Chrome10+,Safari5.1+ */
+	background: -webkit-linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%); 
+	/* Opera11.10+ */
+	background: -o-linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%); 
+	/* IE10+ */
+	background: -ms-linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%); 
+	/* IE6-9 */
+	filter: e("progid:DXImageTransform.Microsoft.gradient( startColorstr='#FE7D00', endColorstr='#CE3E09',GradientType=0 ) progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=0)"); 
+	/* W3C */
+	background: linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%); 
+	
+	-webkit-background-clip: padding;
+	background-clip: padding-box;
+	-moz-background-clip: padding;
+	
+	/****
+	 * Shadow
+	 ****/
+	@et-button-orange-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3), inset 0 0 4px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: @et-button-orange-box-shadow;
+	-moz-box-shadow: @et-button-orange-box-shadow;
+	
+	/****
+	 * Font
+	 ****/
+	font-size: 24px;
+	font-family: Arial;
+	font-weight: bolder; 
+	
+	
+	/****
+	 * Others
+	 ****/
+	
+	border: @et-button-orange-thin solid #FFF; 
+	margin-left: @et-button-orange-thin;
+	
+	
+	span
+	{
+		display: inline-block;
+		padding: 0.5em;
+		filter: e("progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=-1)"); 
+		text-shadow: 0 (@et-button-orange-thiner * -1) (@et-button-orange-thin * -1) rgba(0, 0, 0, 0.4);
+		
+		span
+		{
+			display: inline;
+			padding: 0;
+
+		}
+	}
+	
+	.et-sme-discarrow-r
+	{
+		vertical-align:top;
+	}
+}
+html.msie6
+{
+	.et-button-orange
+	{
+
+		.et-sme-discarrow-r
+		{
+			vertical-align: bottom;
+		}
+	}
+}
+
+html.non-html5browser
+{
+	.et-button-orange
+	{
+		filter: none;
+		min-height: 2em;
+		border: none; 
+		background: url(/_imgs/etui/legacy/common/buttons.png) 100% -60em no-repeat;
+		padding-right: 0.75em;
+		zoom: 1;
+		
+		span
+		{
+			padding-right: 0;
+			background: url(/_imgs/etui/legacy/common/buttons.png) 0 -60em no-repeat;
+			/* fix ie 1px issue */
+			margin-top: -1px;
+			zoom: 1;
+			
+			span
+			{
+				margin-top: 0px;
+				background-image: none;
+			}
+		}
+	}
+}
+
+html.msie8
+{
+	.et-button-orange
+	{
+		span
+		{
+			line-height: 1.8em;
+			vertical-align: top;
+			padding-top:0.3em;
+		}
+	}
+}
+
+html.opera, html.mozilla
+{
+	.et-button-orange .et-sme-discarrow-r
+	{
+		vertical-align: middle;
+	}
+}
