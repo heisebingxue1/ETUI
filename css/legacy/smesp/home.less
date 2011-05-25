@@ -8,6 +8,11 @@ cssframework://etui/legacy/smesp/home.less
 	
 	.et-sme-top
 	{
+		.et-sme-linkbutton
+		{
+			margin-right: 15px;
+		}
+		
 		background: #FFF url(/_imgs/sme/sp/mainstagebg.jpg) 0 bottom repeat-x;
 		#et-sme-home-topscreen
 		{
@@ -45,12 +50,17 @@ cssframework://etui/legacy/smesp/home.less
 			.et-sme-reason
 			{
 				width: 190px;
-				margin-right: 32px;
+				margin-left: 21px;
+				margin-right: 20px;
 				
 				float: left;
 				.et-sme-icon-wrapper
 				{
 					text-align: center;
+					.et-sme-handcraft
+					{
+						margin-right: 20px;
+					}
 				}
 				
 				h3
@@ -61,6 +71,10 @@ cssframework://etui/legacy/smesp/home.less
 		}
 		#et-sme-home-trustedbrands
 		{
+			.et-sme-linkbutton
+			{
+				margin-right: 0px;
+			}
 			width: 926px;
 			height: 104px;
 			background: transparent url(/_imgs/sme/sp/trustedbrandshd.png) 0 0 no-repeat;
@@ -197,9 +211,7 @@ cssframework://etui/legacy/smesp/home.less
 		
 		#et-sme-home-getstarted
 		{
-			margin: @et-section-padding-medium @et-section-padding-large;
-			font-size: 20px;
-			line-height: 24px;
+			margin: @et-section-padding-medium 0;
 			
 			.et-button
 			{

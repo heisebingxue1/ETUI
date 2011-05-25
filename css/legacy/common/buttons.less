@@ -121,8 +121,9 @@ html.non-html5browser
 		min-height: 2em;
 		border: none; 
 		background: url(/_imgs/etui/legacy/common/buttons.png) 100% -60em no-repeat;
-		padding-right: 0.75em;
+		padding-right: 0.76em;
 		zoom: 1;
+		padding-bottom: 1px;
 		
 		span
 		{
@@ -147,9 +148,34 @@ html.msie8
 	{
 		span
 		{
-			line-height: 1.8em;
-			vertical-align: top;
-			padding-top:0.3em;
+			line-height: 1.5em;
+			vertical-align: middle;
+			padding-top:0.5em;
+			.et-sme-discarrow-r
+			{
+				vertical-align: middle;
+				font-size: 115%;
+			}
+		}
+	}
+}
+
+html.msie9
+{
+	.et-button-orange
+	{
+		filter: none;
+		overflow: hidden;
+		span
+		{
+			vertical-align: middle;
+			filter: e("progid:DXImageTransform.Microsoft.gradient( startColorstr='#FE7D00', endColorstr='#CE3E09',GradientType=0 ) progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=0)"); 
+			
+			span
+			{
+				vertical-align: middle;
+				filter: none;
+			}
 		}
 	}
 }

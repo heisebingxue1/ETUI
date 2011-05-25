@@ -3,6 +3,7 @@ cssframework://etui/legacy/smesp/common.less
 */
 
 @et-color-gray: #b6bbbe;
+@et-color-darkgray: #92999e;
 @et-color-blue: #0097d3;
 @et-color-lightblue: #98c5e2;
 
@@ -25,6 +26,7 @@ cssframework://etui/legacy/smesp/common.less
 {
 	color: @et-color-blue;
 	text-decoration: underline;
+	display: inline-block;
 	&:link
 	{
 		color: @et-color-blue;
@@ -42,13 +44,6 @@ cssframework://etui/legacy/smesp/common.less
 		color: @et-color-blue;
 	}
 }
-.et-section a.et-sme-linkbutton,
-.et-section-closing a.et-sme-linkbutton,
-.et-section-opening a.et-sme-linkbutton
-{
-	display: inline-block;
-	margin-right: 15px;
-}
 html.msie6
 {
 	.et-section a.et-sme-linkbutton,
@@ -60,7 +55,7 @@ html.msie6
 	}
 }
 
-
+/* a single row in et-section */
 .et-sme-ro
 {
     margin: 0 0 30px;
@@ -124,7 +119,7 @@ blockquote
 {
 	.et-sme-paragraph
 	{
-		color: #92999e;
+		color: @et-color-darkgray;
 		padding: 15px 0 0 45px;
 	}
 	.et-sme-headline2
@@ -143,4 +138,18 @@ blockquote
 {
     font-size: 12px;
     line-height: 15px;
+}
+/* the get started banner in each page */
+.et-sme-getstarted
+{
+    font-size: 20px;
+    line-height: 24px;
+    padding: 0 42px;
+}
+
+/* the shadow container */
+.et-sme-navshadow-container
+{
+    position: relative;
+    width: 100%;
 }
