@@ -1,6 +1,7 @@
 /* 
-cssframework://etui/legacy/common/helpers.less
-*/
+ * cssframework://etui/legacy/common/helpers.less
+ * Common helper classes
+ */
 
 .et-helper-clearfix:after 
 {
@@ -44,6 +45,13 @@ html.msie6 .et_helper_clearline
 	zoom:1;
 }
 
+/* 
+ * Creates a new block formatting context
+ * Helps to create a sandbox-liked context, isolated the outer content
+ * and inner content.
+ * 
+ * This also helps to do 'clearfix' and avoids margin collapse
+ */
 .et-helper-context
 {
 	zoom: 1;
