@@ -147,6 +147,24 @@
         * Any `fixed` css property will not work on iOS browser, so think carefully and make sure the
         function won't broken on iOS, (one popular solution is to set translateY rather than top when
         onScroll).
+
+6. jQuery
+	
+	1. Check jQuery.fn.length rather than check existance of jQuery wrapper:
+		* bad: -> `if (jQuery('#foo')) { blahblah }`
+		* good: -> `if (jQuery('#foo').length) { blahblah }`
+		
+	2. Rethink selector syntax, when same subset of the selector formed
+	a non-standard selector, and it is natively not supported by queryAllSelector().
+	You may want to do those non-standard filtering later by using jQuery.fn.filter()
+		* bad: -> `jQuery('#foo > .bar:visible')`
+		* good: -> `jQuery('#foo > .bar').filter(':visible')`
+		
+	3. Hook event handler on root element when necessary. (use jQuery.fn.live())
+	TBD: more details
+	
+		
+	
         
 #Process
 
