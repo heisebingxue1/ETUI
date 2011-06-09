@@ -1,0 +1,129 @@
+/* 
+ * cssframework://etui/legacy/smesp/clientdetail.less
+ * client detail page
+ */
+
+#et-sme-clientdetail
+{
+	.et-sme-list-selectable
+	{
+		width: 210px;
+		float: left;
+	}
+	
+	#et-sme-clientdetail-clients
+	{
+		width: 650px;
+		margin-left: 24px;
+		float: left;
+		overflow: hidden;
+		
+		#et-sme-clientdetail-clients-inner
+		{	
+			/* enough space for placing all clientdetail(tabs) */
+			width: 6000px;
+			overflow: hidden;
+			.et-sme-client
+			{
+				float: left;
+				width: 650px;
+				.et-sme-client-image
+				{
+					@et-sme-clientdetail-imagecorner: 4px;
+					width: 650px;
+					height: 210px;
+					overflow: hidden;
+					-webkit-border-radius: @et-sme-clientdetail-imagecorner;
+					-webkit-border-radius: @et-sme-clientdetail-imagecorner;
+					-moz-border-radius: @et-sme-clientdetail-imagecorner;
+					-moz-border-radius: @et-sme-clientdetail-imagecorner;
+					border-radius: @et-sme-clientdetail-imagecorner;
+					border-radius: @et-sme-clientdetail-imagecorner;
+				}
+				.et-sme-client-text
+				{
+					h2
+					{
+						margin-top: 20px;
+						font-weight: bolder;
+						position: relative;
+					}
+					h3
+					{
+						font-size: 20px;
+						line-height: 24px;
+						margin: 0 0 20px;
+						color: #92999e;
+					}
+					.et-sme-client-text-inner
+					{
+						font-size: 15px;
+						line-height: 20px;
+						p
+						{
+							margin: 10px 0;
+						}
+						.et-sme-client-testimonial
+						{
+							float: right;
+							text-align: center;
+							width: 192px;
+							margin: 0 0 0 @et-section-padding-large;
+							color: #6597b2;
+							font-style: italic;
+							font-size: 15px;
+							font-weight: bolder;
+							line-height: 20px;
+							h4
+							{
+								font-size: 20px;
+								line-height: 30px;
+							}
+							.et-sme-client-testimonial-author
+							{
+								color: #98b9cb;
+								font-size: 12px;
+								line-height: 15px;
+								margin: @et-section-padding-medium 0;
+							}
+						}
+						.et-sme-client-video
+						{
+							widht: 652px;
+							height: 368px;
+							overflow: hidden;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+html.non-msie
+{
+	#et-sme-clientdetail
+	{
+		#et-sme-clientdetail-clients
+		{
+			#et-sme-clientdetail-clients-inner
+			{
+				.et-sme-client
+				{
+					/**
+					 * below margin and padding settings are to make
+					 * the page jump to a proper position 
+					 * when user clicked on the 'bookmark' link.
+					 * it leaves 42px white space above the main article
+					 * text in order to make the visual looks 'just right'
+					 * Known Issue:
+					 * Only works for modern browsers (Except IEs)
+					 * */
+					margin-top: (@et-section-padding-large * -1);
+					padding-top: (@et-section-padding-large * 1);
+				}
+			}
+		}
+	}
+	
+}

@@ -3,9 +3,11 @@
  * SME Common css
  */
 
+@et-color-lightergray: #f5f5f6;
 @et-color-gray: #b6bbbe;
 @et-color-darkgray: #92999e;
 @et-color-darkergray: #4a565e;
+@et-color-darkblue: #0070b8;
 @et-color-blue: #0097d3;
 @et-color-lightblue: #98c5e2;
 
@@ -166,3 +168,139 @@ blockquote
 	background: #FFF url(/_imgs/sme/sp/mainstagebg.jpg) 0 top repeat-x;
 }
 /* Panes } */
+
+/* List { */
+
+.et-sme-list-selectable
+{
+	@et-sme-faq-questions-radius: 2px;
+	width: 100%;
+	clear: both;
+	color: @et-color-darkergray;
+	ul.et-sme-list-root
+	{
+		width: 200px;
+		
+		.et-sme-subcontainer
+		{
+			display: none;
+		}
+		li
+		{
+			margin: 2px 0;
+			height: 26px;
+			padding-left: 8px;
+			line-height: 26px;
+			cursor: pointer;
+			
+			a
+			{
+				display: block;
+				width: 100%;
+				height: 100%;
+				margin:0;
+				padding:0;
+				color: @et-color-darkergray;
+				&:hover
+				{
+					text-decoration: none;
+				}
+			}
+			.et-label
+			{
+				vertical-align: baseline;
+			}
+			.et-fs-dings
+			{
+				font-size: 142%;
+				vertical-align: baseline;
+				color: @et-color-darkergray;
+				margin-left: 4px;
+			}
+			
+			ul
+			{
+				padding-left: 20px;
+				width: 190px;
+				color: @et-color-darkgray;
+
+				li
+				{
+					line-height: 1.25em;
+					margin: 0.6em 0;
+					float: left;
+					
+					div.et-sme-subcontainer
+					{
+						h5
+						{
+							font-weight: bolder;
+							padding-bottom: 1em;
+							line-height: 1.25em;
+							font-size: 1.25em;
+						}
+						-webkit-border-radius: @et-sme-faq-questions-radius;
+						-moz-border-radius: @et-sme-faq-questions-radius;
+						border-radius: @et-sme-faq-questions-radius;
+						margin-left: 30px;
+						padding: @et-section-padding-small;
+						width: 429px;
+						border: 1px solid #dadcde;
+						cursor: default;
+					}
+				}
+			}
+	
+			
+		}
+		li.et-active
+		{
+			color: #FFF;
+			background: transparent url(/_imgs/sme/sp/listpanel_active.png)  no-repeat;
+			
+			a
+			{
+				color: #FFF;
+			}
+			.et-fs-dings
+			{
+				color: #FFF;
+			}
+			.et-sme-subcontainer
+			{
+				display: block;
+				
+				.et-sme-subcontainer
+				{
+					display: none;
+				}
+				
+				li.et-active
+				{
+					.et-sme-subcontainer
+					{
+						display: block;
+					}
+				}
+				
+			}
+			
+			ul.et-sme-list-2nd
+			{
+				li
+				{
+					list-style-type: disc;
+					color: @et-color-darkgray;
+					background: none;
+				}
+				li.et-active
+				{
+					color: @et-color-darkergray;
+				}
+			}
+			
+		}
+	}
+}
+
+/* List } */
