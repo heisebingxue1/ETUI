@@ -1,7 +1,9 @@
 .et-sme-clients-clientsdt
 {
     background: transparent url("#CacheSvr#/_imgs/sme/sp/clients/clients_bg.png") left top no-repeat;
-    margin: 0 42px;
+	height: 452px;
+	margin: 38px;
+	padding: 2px 3px;
 	.et-sme-headline2
 	{
 		margin: 0 0 25px;
@@ -9,19 +11,32 @@
 }
 .et-sme-clients-clientsdt-list 
 {
-    float: left;
-    font-size: 12px;
-    line-height: 15px;
-    margin: 0 0 10px;
-    width: 178px;
 	li
 	{
+		float: left;
+		font-size: 12px;
+		height: 223px;
+		line-height: 15px;
+		width: 178px;
 		h3
 		{
 			font-weight: bold;
 		}
 	}
+	.et-sme-clients-clientsdt-com
+	{
+		border-right: 1px solid #afb4b8;
+		height: 138px;
+	}
+	.et-sme-clients-clientsdt-item-last
+	{
+		.et-sme-clients-clientsdt-com
+		{
+			border-right: 0 none;
+		}
+	}
 }
+
 .et-sme-clients-clientsdt-list li h3, .et-sme-clients-clientsdt-list li p
 {
     padding: 5px 15px;
@@ -45,5 +60,15 @@
 	{
 		font-weight: bold;
 		margin-top: 10px;
+	}
+}
+.et-sme-clients-bottom
+{
+	.et-sme-ro
+	{
+		.et-sme-headline2
+		{
+			margin-left: 42px;
+		}
 	}
 }
