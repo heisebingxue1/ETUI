@@ -34,10 +34,14 @@
 	}
 	vertical-align: middle;
 }
-
+@et-button-orange-height: 2.58em;
 .et-button-orange
 {
-	@et-button-orange-height: 2.25em;
+	.et-fs-dings
+	{
+		display: inline-block;
+		overflow: hidden;
+	}
 	@et-button-orange-thin: 0.083em;
 	@et-button-orange-thiner: 0.042em;
 	
@@ -89,37 +93,37 @@
 	
 	border: @et-button-orange-thin solid #FFF; 
 	margin-left: @et-button-orange-thin;
-	
+	height: (@et-button-orange-height - (@et-button-orange-thin * 2));
 	
 	span
 	{
 		display: inline-block;
-		padding: 0.5em;
-		filter: e("progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=-1)"); 
+		height: (@et-button-orange-height - (@et-button-orange-thin * 2));
+		line-height: (@et-button-orange-height - (@et-button-orange-thin * 2));
+		padding: 0 0.5em;
+		/* Do not apply filter for ie
+		 * otherwise it will display alias
+		 * filter: e("progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=-1)"); 
+		 */
+
+		/* Define them twice because firefox 4 doesn't support negative value for width of shadow 
+		 * The second definition is for browsers who support it */
+		text-shadow: 0 (@et-button-orange-thiner * -1) (@et-button-orange-thin * 1) rgba(0, 0, 0, 0.4);
 		text-shadow: 0 (@et-button-orange-thiner * -1) (@et-button-orange-thin * -1) rgba(0, 0, 0, 0.4);
 		
 		span
 		{
 			display: inline;
 			padding: 0;
-
+			height: auto;
+			line-height: normal;
+			filter: none;
 		}
 	}
 	
 	.et-sme-discarrow-r
 	{
-		vertical-align:top;
-	}
-}
-html.msie6
-{
-	.et-button-orange
-	{
-
-		.et-sme-discarrow-r
-		{
-			vertical-align: bottom;
-		}
+		vertical-align:middle;
 	}
 }
 
@@ -128,43 +132,24 @@ html.non-html5browser
 	.et-button-orange
 	{
 		filter: none;
-		min-height: 2em;
 		border: none; 
 		background: url(/_imgs/etui/legacy/common/buttons.png) 100% -60em no-repeat;
 		padding-right: 0.76em;
 		zoom: 1;
-		padding-bottom: 1px;
-		
+		height: @et-button-orange-height;
+
 		span
 		{
+			height: @et-button-orange-height;
 			padding-right: 0;
 			background: url(/_imgs/etui/legacy/common/buttons.png) 0 -60em no-repeat;
-			/* fix ie 1px issue */
-			margin-top: -1px;
 			zoom: 1;
 			
 			span
 			{
-				margin-top: 0px;
+				height: auto;
+				margin: 0px;
 				background-image: none;
-			}
-		}
-	}
-}
-
-html.msie8
-{
-	.et-button-orange
-	{
-		span
-		{
-			line-height: 1.5em;
-			vertical-align: middle;
-			padding-top:0.5em;
-			.et-sme-discarrow-r
-			{
-				vertical-align: middle;
-				font-size: 115%;
 			}
 		}
 	}
@@ -187,13 +172,5 @@ html.msie9
 				filter: none;
 			}
 		}
-	}
-}
-
-html.opera, html.mozilla
-{
-	.et-button-orange .et-sme-discarrow-r
-	{
-		vertical-align: middle;
 	}
 }

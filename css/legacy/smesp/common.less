@@ -3,6 +3,7 @@
  * SME Common css
  */
 
+
 @et-color-lightergray: #f5f5f6;
 @et-color-gray: #b6bbbe;
 @et-color-darkgray: #92999e;
@@ -142,6 +143,10 @@ blockquote
 {
     font-size: 12px;
     line-height: 15px;
+}
+.et-sme-none
+{
+	display: none;
 }
 /* the get started banner in each page */
 .et-sme-getstarted
@@ -304,3 +309,149 @@ blockquote
 }
 
 /* List } */
+
+/* the shadow container */
+.et-sme-navshadow-container
+{
+    position: relative;
+    width: 100%;
+}
+
+
+/* Panes { */
+.et-sme-pane-graynoisy
+{
+	background: #FFF url(/_imgs/sme/sp/mainstagebg.jpg) 0 bottom repeat-x;
+}
+.et-sme-pane-topshadow
+{
+	background: #FFF url(/_imgs/sme/sp/mainstagebg.jpg) 0 top repeat-x;
+}
+/* Panes } */
+
+.et-sme-top-headlines
+{
+	h1
+	{
+		width: 770px;
+	}
+	p
+	{
+		width: 660px;
+	}
+}
+
+
+/*thumbnails styles start*/
+.et-thumbnails-image, .et-thumbnails-desc
+{
+    float: left;
+}
+.et-thumbnails-image
+{
+	background: transparent url("#CacheSvr#/_imgs/sme/sp/features/imageshadow.png") center bottom no-repeat;
+	min-width: 510px; 
+    padding: 10px 42px;
+}
+.et-thumbnails-desc
+{
+    padding: 100px 0 0;
+    width: 320px;
+}
+.et-thumbnails-none
+{
+    display: none;
+}
+.et-thumbnails-control 
+{
+	li
+	{
+		float: left;
+	}
+	a,a:link,a:visited,a:hover,a:active
+	{
+		text-decoration: none;
+	}
+}
+.et-thumbnails-l, .et-thumbnails-r
+{
+    margin: 25px 0 0;
+}
+.et-thumbnails-m
+{
+    margin: 0 20px;
+	overflow: hidden;
+	position: relative;
+    width: 795px;
+}
+.et-thumbnails-lbtn, .et-thumbnails-rbtn
+{
+    background: #fff url("#CacheSvr#/_imgs/sme/sp/features/thumbnailbtn_bg.png") center center no-repeat;
+}
+.et-thumbnails-lbtn 
+{
+	span
+	{
+		background: transparent url("#CacheSvr#/_imgs/sme/sp/features/thumbnailbtn_larrow.png") center center no-repeat;
+	}
+}
+.et-thumbnails-rbtn 
+{
+	span
+	{
+		background: transparent url("#CacheSvr#/_imgs/sme/sp/features/thumbnailbtn_rarrow.png") center center no-repeat;
+	}
+}
+.et-thumbnails-control
+{
+	li
+	{
+		a
+		{
+			span
+			{
+				color: #fff;
+				line-height: 20px;
+				padding: 0 10px;
+			}
+		}
+	}
+}
+.et-thumbnails-thumb
+{
+    margin: 0 10px 0 0;
+    overflow: hidden;
+    width: 105px;
+	p
+	{
+		font-size: 11px;
+		line-height: 13px;
+		text-align: center;
+	}
+}
+.et-thumbnails-thumb-last
+{
+    margin: 0;
+}
+.et-thumbnails-thumb:hover, .et-thumbnails-active
+{
+    color: #006db4;
+    cursor: pointer;
+	.et-thumbnails-thumbpic
+	{
+		background: transparent url("#CacheSvr#/_imgs/sme/sp/features/thnactivedpanel.png") left top no-repeat;
+	}
+}
+.et-thumbnails-thumbpic
+{
+    background: transparent url("#CacheSvr#/_imgs/sme/sp/features/thnpanel.png") left top no-repeat;
+    margin-bottom: 5px;
+    min-height: 56px;
+    padding: 4px;
+}
+.et-thumbnails-thumbs
+{
+    margin: 0;
+    width: 3000px;
+}
+/*thumbnails styles end*/
