@@ -74,6 +74,99 @@
 			}
 		}
 	}
+	
+	#et-sme-aboutus-case
+	{
+		.et-sme-aboutus-case-img
+		{
+			width: 269px;
+			height: 142px;
+			overflow: hidden;
+		}
+		
+		.et-sme-aboutus-case-img-xero img
+		{
+			margin: 0;
+		}
+		
+		.et-sme-aboutus-case-img-philips img
+		{
+			margin-left: (-32px - 269px);
+		}
+		
+		.et-sme-aboutus-case-img-abinbev img
+		{
+			margin-left: ((-32px - 269px) * 2px);
+		}
+		
+		.et-sme-aboutus-case-icon
+		{
+			width: 17px;
+			height: 14px;
+			float: left;
+			font-size: 120%;
+			color: #000;
+		}
+		
+		ul
+		{
+			margin: 0 -16px;
+			li
+			{
+				width: 269px;
+				float: left;
+				margin: 0 19px;
+				
+				.et-sme-description
+				{
+					margin-top: @et-section-padding-small;
+					h3
+					{
+						margin-left: 20px;
+						font-weight: bolder;
+						text-decoration: underline;
+					}
+					p
+					{
+						margin-left: 20px;
+					}
+				}
+			}
+		}
+	}
+	
+	#et-sme-aboutus-latest
+	{
+		border-top: 1px solid @et-color-lightergray;
+		background: transparent url(/_imgs/sme/sp/aboutus_speaker.jpg) no-repeat 100% 30px;
+		min-height: 340px;
+		
+		#et-sme-aboutus-latest-inner
+		{
+			li
+			{
+				margin-bottom: @et-section-padding-large;
+				overflow: hidden;
+				a
+				{
+					color: @et-color-darkblue;
+					font-weight: bolder;
+					text-decoration: underline;
+				}
+			}
+			.et-date
+			{
+				float: left;
+				width: 115px;
+				clear: both;
+			}
+			.et-text
+			{
+				width: 550px;
+				float: left;
+			}
+		}
+	}
 }
 
 
@@ -103,5 +196,22 @@ html.msie6 #et-sme-aboutus
 				}
 			}
 		}
+	}
+	
+	#et-sme-aboutus-case
+	{
+		ul
+		{
+			zoom: 1;
+			li
+			{
+				display: inline;
+			}
+		}
+	}
+	
+	#et-sme-aboutus-latest
+	{
+		height: 340px;
 	}
 }
