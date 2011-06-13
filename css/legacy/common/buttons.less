@@ -131,23 +131,22 @@ html.non-html5browser
 	{
 		filter: none;
 		border: none; 
-		background: url(/_imgs/etui/legacy/common/buttons.png) 100% -60em no-repeat;
+		background: url(/_imgs/etui/legacy/common/buttons_orange.png) 100% -60em no-repeat;
 		padding-right: 0.76em;
 		zoom: 1;
 		height: @et-button-orange-height;
 
-		span
+		.et-button-inner
 		{
 			height: @et-button-orange-height;
 			padding-right: 0;
-			background: url(/_imgs/etui/legacy/common/buttons.png) 0 -60em no-repeat;
+			background: url(/_imgs/etui/legacy/common/buttons_orange.png) 0 -60em no-repeat;
 			zoom: 1;
 			
 			span
 			{
 				height: auto;
 				margin: 0px;
-				background-image: none;
 			}
 		}
 	}
@@ -172,13 +171,6 @@ html.msie9
 		}
 	}
 }
-.et-button-white-end
-{
-	background: transparent url(/_imgs/etui/legacy/common/buttons_white.png) 0 -60em no-repeat;
-	display: inline-block;
-	line-height: 2em;
-	padding-left: 30px;
-}
 .et-button-white
 {
 	color: #494f54;
@@ -191,7 +183,7 @@ html.msie9
 		font-size: 1.333em;
 		margin-right: -13px;
 	}
-	.et-button-white-con
+	.et-button-cnt
 	{
 		margin-right: 20px;
 	}
@@ -203,5 +195,13 @@ html.msie9
     {
         text-decoration: none;
     }
+    .et-button-inner
+    {
+	    background: transparent url(/_imgs/etui/legacy/common/buttons_white.png) 0 -60em no-repeat;
+	    display: inline-block;
+	    line-height: 2em;
+	    padding-left: 30px;
+    }
 }
+
 
