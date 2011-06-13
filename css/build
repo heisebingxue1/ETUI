@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 #Define Paths
 pathRoot=`dirname $0`/../
