@@ -4,15 +4,35 @@
 
     1. Properly line-break.
     
-    2. Class, id should start with 'et-' to avoid conflict
+    2. Class, id should always start with 'et-projectname' to avoid conflict. even if you are creating a common functional class which can be used across project, you still need to add 'et-' as a prefix in order to avoid conflict with css in 3rdparty header and footer.
     
     3. Use existing functional css class, such as et-clr.
     
     4. Use semantically correct class name, for example, when element is activated,
     the class name that gives element highlight style should be et-active
 
-    5. Put '/* + Module Name - Begin */' before module block starts,
-    /* - Module Name - End */ after module block ends.
+    5. Put '/* Module Name { */' before module block starts,
+    /* Module Name } */ after module block ends.
+
+    6. The root wrapper element of each page should have a UNIQUE id. Let's say our project name is foo and the page we are developing is bar, then the root wrapper shall be something like this: <div id='et-foo-bar' >blah</div>
+
+    7. Becasuse of the nature of merging css and the ie 6 multiple id definition bug, the id should be named very carefully to make sure it is not used in the other pages.
+
+    A bad case is when you named your element id as #et-badpart and you defined the style as #et-badpart.page1 { background-color: red; }, because of 'badpart' is too general. someone took it and use in in his page with a different class name, and defined it as #et-badpart.page2 { background-color: red; }, althought those 2 css definitions work fine on modern browser, the second defintion will be ignored by ie6.
+
+    the solution would be: 
+        1. Use class instead
+        2. Be more specific. e.g et-projectname-whichpage-whatfunction
+
+    8. Minimal the affection
+    
+    when adding a page specific css defintion, keep in mind that it should only affect the elemenet which place on your page.
+
+    for example, when you trying to modify the textarea style on your page. you should always include the page id before the css defintion of textarea.
+
+    bad: -> textarea { background-color: transparent}
+    good: -> #et-projectname-pagename textarea { background-color: transparent }
+    
 
 2. iOS compatibilities
     
@@ -150,11 +170,11 @@
 
 6. jQuery
 	
-	1. Check jQuery.fn.length rather than check existance of jQuery wrapper:
+	1. Check jQuery.fn.length rather than check existance of jQuery wrapper object:
 		* bad: -> `if (jQuery('#foo')) { blahblah }`
 		* good: -> `if (jQuery('#foo').length) { blahblah }`
 		
-	2. Rethink selector syntax, when same subset of the selector formed
+	2. Rethink selector syntax, when you found same subset of the selector formed
 	a non-standard selector, and it is natively not supported by queryAllSelector().
 	You may want to do those non-standard filtering later by using jQuery.fn.filter()
 		* bad: -> `jQuery('#foo > .bar:visible')`
