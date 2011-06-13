@@ -12,9 +12,12 @@
 .et-button
 {
 	display: inline-block;
-	color: #FFF;
 	cursor: pointer;
-	
+	vertical-align: middle;
+}
+@et-button-orange-height: 2.58em;
+.et-button-orange
+{
 	&:link
 	{
 		color: #FFF;
@@ -32,11 +35,6 @@
 		color: #FFF;
 		text-decoration: none;
 	}
-	vertical-align: middle;
-}
-@et-button-orange-height: 2.58em;
-.et-button-orange
-{
 	.et-fs-dings
 	{
 		display: inline-block;
@@ -174,3 +172,32 @@ html.msie9
 		}
 	}
 }
+.et-button-wh
+{
+	background: transparent url(/_imgs/etui/legacy/common/buttons_white.png) 0 -60em no-repeat;
+	display: inline-block;
+	line-height: 2em;
+	padding-left: 30px;
+}
+.et-button-wh-end
+{
+	color: #494f54;
+	background: transparent url(/_imgs/etui/legacy/common/buttons_white.png) right -60em no-repeat;
+	font-weight: bold;
+	padding-right: 22px;
+	.et-fs-dings
+	{
+		color: #fa7701;
+		font-size: 1.333em;
+		margin-right: -13px;
+	}
+	.et-button-wh-con
+	{
+		margin-right: 20px;
+	}
+	span
+	{
+		display: inline-block;
+	}
+}
+
