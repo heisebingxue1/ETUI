@@ -1,3 +1,3 @@
 input:../lib/
-output:../out/sme.sp.etui.chk.js
+output:../out/sp.etui.chk.js
 packages: jquery.fn.dropTo etui.cufon
