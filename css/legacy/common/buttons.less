@@ -93,7 +93,7 @@
 	margin-left: @et-button-orange-thin;
 	height: (@et-button-orange-height - (@et-button-orange-thin * 2));
 	
-	span
+	span.et-button-inner
 	{
 		display: inline-block;
 		height: (@et-button-orange-height - (@et-button-orange-thin * 2));
@@ -111,15 +111,21 @@
 		
 		span
 		{
-			display: inline;
 			padding: 0;
 			height: auto;
-			line-height: normal;
 			filter: none;
+			/* 
+			 * no line-height overwrite here
+			 * otherwise text cannot aligned to the middle
+			 *  */
+		}
+		
+		.et-button-cnt
+		{
 		}
 	}
 	
-	.et-sme-discarrow-r
+	.et-fs-dings
 	{
 		vertical-align:middle;
 	}
@@ -183,10 +189,7 @@ html.msie9
 		font-size: 1.333em;
 		margin-right: -13px;
 	}
-	.et-button-cnt
-	{
-		margin-right: 20px;
-	}
+
 	span
 	{
 		display: inline-block;
@@ -201,6 +204,12 @@ html.msie9
 	    display: inline-block;
 	    line-height: 2em;
 	    padding-left: 30px;
+	    
+    	.et-button-cnt
+		{
+			margin-right: 20px;
+			display: inline;
+		}
     }
 }
 
