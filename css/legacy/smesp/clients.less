@@ -1,3 +1,8 @@
+/* 
+ * cssframework://etui/legacy/smesp/clients.less
+ * SME clients css
+ */
+
 #et-sme-clients
 {
     .et-sme-clients-clientsdt
@@ -42,6 +47,23 @@
     .et-sme-clients-clientsdt-list li h3, .et-sme-clients-clientsdt-list li p
     {
         padding: 5px 15px;
+    }
+    .et-sme-clients-clientsdt-list
+    {
+         li 
+         {
+             p
+             {
+                 a
+                 {
+                    &:link, &:visited, &:hover, &:active
+                    {
+                        color: #0070b8;
+                        text-decoration: underline;
+                    }
+                 }
+             }
+         }
     }
     .et-sme-rotator
     {
