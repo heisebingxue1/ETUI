@@ -40,7 +40,7 @@
 
 /*!require:hacks */
 /* Root namespace for etui */
-etui = {};
+var etui = {};
 
 etui.ver = isNaN("/*@=VERSION */" * 1) ?0:"/*@=VERSION */" * 1;
 
