@@ -1,77 +1,74 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class='et-lng-en'>
 <head>
-  <meta charset='utf-8'>
-
-  <title>ETUI/ETUI @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #c02b57;
-      font-family: "Helvetica,Arial,FreeSans";
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #3fd4a8; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #3fd4a8; }
-    h3 { text-align: center; color: #3fd4a8; }
-    a { color: #3fd4a8; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<title>Englishtown Core Helper and User Interface</title>
+	<link rel="stylesheet/less" type="text/css" href="./css/default.less">
+	<script src="./js/less-1.1.3.min.js" type="text/javascript"></script>
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js'></script>
+	<script src='./js/etch.chk.js'></script>
+	<script type='text/javascript'>
+		etch.tagger.tag();
+	</script>
 </head>
-
-<body>
-  <a href="http://github.com/ETUI/ETUI"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/ETUI/ETUI/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/ETUI/ETUI/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/ETUI/ETUI">ETUI</a>
-      <span class="small">by <a href="http://github.com/ETUI">ETUI</a></span></h1>
-
-    <div class="description">
-      Experimental front-end library
-    </div>
-
-    <h2>Authors</h2>
-<p>Vince (faceach@gmail.com)<br/>normanzb (homyu.shinn@gmail.com)<br/>Norman Xu (i@qusi.org)<br/><br/>      </p>
-<h2>Contact</h2>
-<p> (loveetui@gmail.com)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/ETUI/ETUI/zipball/master">zip</a> or
-      <a href="http://github.com/ETUI/ETUI/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/ETUI/ETUI</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/ETUI/ETUI">ETUI/ETUI</a>
-    </div>
-
-  </div>
-
-  
+<body class='bg-printerr'>
+	<div id='wrp' class=' cn-roundDef' >
+		<div id='ttl' class=''>
+			<h1>
+				<span class='et-fs-dings'>)</span>
+				<span class=''>
+					ETCH &amp; ETUI
+				</span>
+			</h1>
+			<h2>
+				<span class='et-fs-helvetical-neue-lt-th et-textshadow'>
+				Experimental frontend utilities for elab and jQuery plugins which created by elab developers
+				</span>
+			</h2>
+		</div>
+		<fieldset id='nav' class='cn-roundDef'>
+			<legend> Index </legend>
+			<ul>
+				<li><a href='#etch'>etch</a></li>
+				<li><a href='#etui'>etui</a></li>
+				<li></li>
+			</ul>
+		</fieldset>
+		<div id='cnt' class='helper-newcontext'>
+			<section id='etch'>
+				<h3>
+					<dt>ETCH</dt><dd>Englishtown Core Helper</dd>
+				</h3>
+				<p>
+					Contains the small but most important utilities which elab uses.
+					<br />
+					etch should be placed into the &lt;head /&gt; to make sure it 
+					is loaded first to provide the very basic functionalities which 
+					makes our web page look great.
+					<br /> 
+					because of the &lt;script /&gt; usually blocking the page from
+					loading the other resources, it is very important to 
+					<span class='hl-yellow'>
+					keep it
+					small and only essential utilities can be put into etch.
+					</span>
+				</p>
+			</section>
+			<section id='etui'>
+				<h3>
+					<dt>ETUI</dt>
+					<dd>Englishtown User Interface</dd>
+				</h3>
+				<p>
+					Optional UI lib, provides the ui components such as font sprite,
+					scrollbar, lightbox and so on.
+				</p>
+			</section>
+		</div>
+	</div>
+	<script src='./js/cufon.js'></script>
+	<script src='./js/etui.chk.js'></script>
+	<script type='text/javascript'>
+		etui.cufon.load('http://local.englishtown.com');
+	</script>
 </body>
 </html>
