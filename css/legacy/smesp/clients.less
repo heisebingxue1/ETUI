@@ -7,10 +7,12 @@
 {
     .et-sme-clients-clientsdt
     {
-        background: transparent url("#CacheSvr#/_imgs/sme/sp/clients/clients_bg.png") left top no-repeat;
-	    height: 452px;
-	    margin: 38px;
-	    padding: 2px 3px;
+        border: 1px solid #c0c0c0;
+        border-radius: 5px;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.23);
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+	    margin: 39px;
 	    .et-sme-headline2
 	    {
 		    margin: 0 0 25px;
@@ -18,39 +20,33 @@
     }
     .et-sme-clients-clientsdt-list 
     {
-	    li
+        vertical-align: top;
+	    td
 	    {
-		    float: left;
+            border-right: 1px solid #afb4b8;
 		    font-size: 12px;
-		    height: 223px;
 		    line-height: 15px;
+            padding: 0 0 8px;
+            vertical-align: top;
 		    width: 178px;
 		    h3
 		    {
 			    font-weight: bold;
 		    }
 	    }
-	    .et-sme-clients-clientsdt-com
-	    {
-		    border-right: 1px solid #afb4b8;
-		    height: 138px;
-	    }
 	    .et-sme-clients-clientsdt-item-last
 	    {
-		    .et-sme-clients-clientsdt-com
-		    {
-			    border-right: 0 none;
-		    }
+            border-right: 0 none;
 	    }
     }
 
-    .et-sme-clients-clientsdt-list li h3, .et-sme-clients-clientsdt-list li p
+    .et-sme-clients-clientsdt-list td h3, .et-sme-clients-clientsdt-list td p
     {
         padding: 5px 15px;
     }
     .et-sme-clients-clientsdt-list
     {
-         li 
+         td 
          {
              p
              {
@@ -100,7 +96,7 @@
         margin-left: 490px;
         padding: 30px;
         position: relative;
-	    ul
+	    table
 	    {
 		    font-weight: bold;
 		    margin-top: 10px;
