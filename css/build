@@ -24,7 +24,7 @@ fi
 
 if [ $# -ge 2 ]
 then
-    if [ "$2" == "-x" ]
+    if [ "$2"="-x" ]
     then
         addParams=" $2"
     fi
@@ -48,7 +48,7 @@ else
     # create parent directory also
     mkdir -p `dirname $target`
 fi
-    
+
 echo building css
 node $binLessc$addParams `dirname $0`$source.less > $target'.css'
 echo building rtl css
