@@ -167,6 +167,7 @@ blockquote
 .et-sme-list-selectable
 {
     @et-sme-faq-questions-radius: 2px;
+    @et-sme-list-selectable-border: 1px solid #dadcde;
     width: 100%;
     clear: both;
     color: @et-color-darkergray;
@@ -239,7 +240,7 @@ blockquote
                         margin-left: 30px;
                         padding: @et-section-padding-small;
                         width: 429px;
-                        border: 1px solid #dadcde;
+                        border: @et-sme-list-selectable-border;
                         cursor: default;
                     }
                 }
@@ -267,6 +268,7 @@ blockquote
                 .et-sme-subcontainer
                 {
                     display: none;
+                    border: none;
                 }
                 
                 li.et-active
@@ -274,6 +276,7 @@ blockquote
                     .et-sme-subcontainer
                     {
                         display: block;
+                        border: @et-sme-list-selectable-border;
                     }
                 }
                 
