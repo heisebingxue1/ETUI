@@ -217,14 +217,14 @@ blockquote
                 padding-left: 20px;
                 width: 190px;
                 color: @et-color-darkgray;
+                padding-top: 0.6em;
 
                 li
                 {
+                    /* delete float:left to avoid the bug (bullets disappear) in IE7 & IE6  */
                     line-height: 1.25em;
-                    margin: 0.6em 0;
-                    float: left;
+                    margin: 0 0 1.2em;
                     height: auto;
-                    
                     div.et-sme-subcontainer
                     {
                         h5
