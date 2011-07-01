@@ -1,4 +1,4 @@
-/* 
+/*
  * cssframework://etui/legacy/smesp/common.less
  * SME Common css
  */
@@ -11,6 +11,16 @@
 @et-color-darkblue: #0070b8;
 @et-color-blue: #0097d3;
 @et-color-lightblue: #98c5e2;
+
+body
+{
+    background: transparent url(#CacheSvr#/_imgs/etui/legacy/common/bg_dot.gif) repeat 0 0;
+}
+
+html.non-html5browser body
+{
+    background: none;
+}
 
 
 /* font-sprite relocation */
@@ -70,19 +80,19 @@ html.msie6
 {
     margin: 0 0 30px;
 }
-.et-sme-headline1 
+.et-sme-headline1
 {
     font-size: 38px;
     line-height: 42px;
     margin: 0 0 20px;
 }
-.et-sme-headline2 
+.et-sme-headline2
 {
     font-size: 20px;
     font-weight: bold;
     line-height: 30px;
 }
-.et-sme-headline3 
+.et-sme-headline3
 {
     font-size: 15px;
     font-weight: bold;
@@ -108,7 +118,7 @@ html.msie6
 {
     font-style: italic;
 }
-blockquote 
+blockquote
 {
     .et-sme-paragraph
     {
@@ -120,7 +130,7 @@ blockquote
         font-family: Times New Roman;
     }
 }
-.et-sme-quotehl 
+.et-sme-quotehl
 {
     .et-sme-paragraph
     {
@@ -174,7 +184,7 @@ blockquote
     ul.et-sme-list-root
     {
         width: 200px;
-        
+
         .et-sme-subcontainer
         {
             display: none;
@@ -186,7 +196,7 @@ blockquote
             padding-left: 8px;
             line-height: 26px;
             cursor: pointer;
-            
+
             a
             {
                 display: block;
@@ -211,7 +221,7 @@ blockquote
                 color: @et-color-darkergray;
                 margin-left: 4px;
             }
-            
+
             ul
             {
                 padding-left: 20px;
@@ -224,7 +234,7 @@ blockquote
                     margin: 0.6em 0;
                     float: left;
                     height: auto;
-                    
+
                     div.et-sme-subcontainer
                     {
                         h5
@@ -245,14 +255,14 @@ blockquote
                     }
                 }
             }
-    
-            
+
+
         }
         li.et-active
         {
             color: #FFF;
             background: transparent url(#CacheSvr#/_imgs/sme/sp/listpanel_active.png)  no-repeat;
-            
+
             a
             {
                 color: #FFF;
@@ -264,13 +274,13 @@ blockquote
             .et-sme-subcontainer
             {
                 display: block;
-                
+
                 .et-sme-subcontainer
                 {
                     display: none;
                     border: none;
                 }
-                
+
                 li.et-active
                 {
                     .et-sme-subcontainer
@@ -279,9 +289,9 @@ blockquote
                         border: @et-sme-list-selectable-border;
                     }
                 }
-                
+
             }
-            
+
             ul.et-sme-list-2nd
             {
                 li
@@ -295,7 +305,7 @@ blockquote
                     color: @et-color-darkergray;
                 }
             }
-            
+
         }
     }
 }
@@ -337,7 +347,7 @@ blockquote
 /*thumbnails styles start*/
 .et-thumbnails-image
 {
-    background: transparent url("#CacheSvr#/S_imgs/sme/sp/features/imageshadow.png") center bottom no-repeat; 
+    background: transparent url("#CacheSvr#/S_imgs/sme/sp/features/imageshadow.png") center bottom no-repeat;
     padding: 10px 30px;
 }
 .et-thumbnails-desc
@@ -361,7 +371,7 @@ blockquote
 {
     display: none;
 }
-.et-thumbnails-control 
+.et-thumbnails-control
 {
     width: 100%;
     li
@@ -387,21 +397,21 @@ blockquote
 {
     background: #fff url("#CacheSvr#/_imgs/sme/sp/features/thumbnailbtn_bg.png") center center no-repeat;
 }
-.et-thumbnails-lbtn 
+.et-thumbnails-lbtn
 {
     span
     {
         background: transparent url("#CacheSvr#/_imgs/sme/sp/features/thumbnailbtn_larrow.png") center center no-repeat;
     }
 }
-.et-thumbnails-rbtn 
+.et-thumbnails-rbtn
 {
     span
     {
         background: transparent url("#CacheSvr#/_imgs/sme/sp/features/thumbnailbtn_rarrow.png") center center no-repeat;
     }
 }
-.et-thumbnails-rbtn, .et-thumbnails-lbtn 
+.et-thumbnails-rbtn, .et-thumbnails-lbtn
 {
     display: block;
 }
