@@ -1,3 +1,3 @@
 input:../lib/
 output:../out/sp.etui.chk.js
-packages: jquery.fn.dropTo etui.cufon
+packages: jquery.fn.dropTo etui.cufon etui.exp.ScrollManager
