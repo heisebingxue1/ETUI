@@ -1,0 +1,3 @@
+[submodule "lib/jquery/fn/dropTo"]
+	path = lib/jquery/fn/dropTo
+	url = git@github.com:normanzb/dropTo.git
