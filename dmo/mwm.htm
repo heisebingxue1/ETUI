@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id='foo'></div>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js'></script>
+		<script src='../out/etui.chk.js'></script>
+		<script type='text/javascript'>
+			var mwm = etui.mwm;
+			var viewModel = {
+				content: mwm.ob('test')
+			};
+			mwm.bind($('#foo'),viewModel, [{
+				to: 'html()',
+				from: 'content'
+			}]);
+		</script>
+	</body>
+</html>
