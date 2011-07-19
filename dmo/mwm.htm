@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id='foo'></div>
+		<div id='bar'><span></span></div>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js'></script>
+		<script src='../out/etui.chk.js'></script>
+		<script type='text/javascript'>
+			var mwm = etui.mwm;
+			var fooVModel = {
+				content: mwm.ob('test'),
+				onclick: function(){
+					alert(1);
+				}
+			};
+			mwm.bind($('#foo'),fooVModel, 
+			[{
+				// test passing value 
+				to: 'html()',
+				from: 'content'
+			},{
+				// test event hook
+				to: 'click()',
+				from: 'onclick'
+			}]);
+
+			var barVModel = {
+				// test plain text
+				text: 'haha',
+				onclick: function(){
+					alert(2);
+				}
+			};
+
+			mwm.bind($('#bar'), barVModel, [{
+				to: 'text()',
+				from: 'text'
+			},{
+				// test assigning 
+				to: '0.onclick',
+				from: 'onclick'
+			}]);
+
+		</script>
+	</body>
+</html>
