@@ -10,11 +10,18 @@
 		<script type='text/javascript'>
 			var mwm = etui.mwm;
 			var viewModel = {
-				content: mwm.ob('test')
+				content: mwm.ob('test'),
+				onclick: function(){
+					alert(1);
+				}
 			};
-			mwm.bind($('#foo'),viewModel, [{
+			mwm.bind($('#foo'),viewModel, 
+			[{
 				to: 'html()',
 				from: 'content'
+			},{
+				to: 'click()',
+				from: 'onclick'
 			}]);
 		</script>
 	</body>
