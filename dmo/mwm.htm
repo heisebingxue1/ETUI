@@ -5,7 +5,8 @@
 	</head>
 	<body>
 		<div id='foo'></div>
-		<div id='bar'><span></span></div>
+		<div id='bar'></div>
+		<div id='foobar'><span>hahaha</span></div>
 		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js'></script>
 		<script src='../out/etui.chk.js'></script>
 		<script type='text/javascript'>
@@ -43,6 +44,26 @@
 				to: '0.onclick',
 				from: 'onclick'
 			}]);
+
+			var foobarVModel = {
+				height: 100,
+				onclick: function(){
+					alert(3);
+				}
+			};
+
+			mwm.bind($('#foobar'), foobarVModel, [{
+				// test hard coded function invocation
+				to: 'find("span").css("background-color","black")' +
+					// test JSON data
+					'.css({"display": "block", "color":"#FFF"})' +
+					// test when there are commas in it 
+					'.text("haha,haha").css("height")',
+				from: 'height',
+				maps:[function(value){ return value * 10 + 'px'; }]
+			}
+				
+			]);
 
 		</script>
 	</body>
