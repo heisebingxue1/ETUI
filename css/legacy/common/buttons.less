@@ -1,215 +1,217 @@
-/* 
+/*
  * cssframework://etui/legacy/common/buttons.less
- * 
+ *
  * Cross browser, font size free, button definition
- * 
+ *
  * Usage:
  * <a href='et-button et-button-orange'><span>text</span></a>
- * 
+ *
  * Require:
  * 974.less
  */
 .et-button
 {
-	display: inline-block;
-	cursor: pointer;
-	vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
 }
 @et-button-orange-height: 2.58em;
 .et-button-orange
 {
-	&:link
-	{
-		color: #FFF;
-	}
-	&:visited
-	{
-		color: #FFF;
-	}
-	&:active
-	{
-		color: #FFF;
-	}
-	&:hover
-	{
-		color: #FFF;
-		text-decoration: none;
-	}
-	.et-fs-dings
-	{
-		display: inline-block;
-		overflow: hidden;
-	}
-	@et-button-orange-thin: 0.083em;
-	@et-button-orange-thiner: 0.042em;
-	
-	.et-section-corner-top;
-	.et-section-corner-bottom;
-	/****
-	 * Gradient Effect 
-	 ****/
-	 
-	/* Old browsers */
-	background: rgb(254,125,0); 
-	/* FF3.6+ */
-	background: -moz-linear-gradient(top, rgba(254,125,0,1) 10%, rgba(206,62,9,1) 100%); 
-	/* Chrome,Safari4+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(254,125,0,1)), color-stop(100%,rgba(206,62,9,1))); 
-	/* Chrome10+,Safari5.1+ */
-	background: -webkit-linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%); 
-	/* Opera11.10+ */
-	background: -o-linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%); 
-	/* IE10+ */
-	background: -ms-linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%); 
-	/* IE6-9 */
-	filter: e("progid:DXImageTransform.Microsoft.gradient( startColorstr='#FE7D00', endColorstr='#CE3E09',GradientType=0 ) progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=0)"); 
-	/* W3C */
-	background: linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%); 
-	
-	-webkit-background-clip: padding;
-	background-clip: padding-box;
-	-moz-background-clip: padding;
-	
-	/****
-	 * Shadow
-	 ****/
-	@et-button-orange-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3), inset 0 0 4px 0 rgba(0, 0, 0, 0.3);
-	box-shadow: @et-button-orange-box-shadow;
-	-moz-box-shadow: @et-button-orange-box-shadow;
-	
-	/****
-	 * Font
-	 ****/
-	font-size: 24px;
-	font-family: Arial;
-	font-weight: bolder; 
-	
-	
-	/****
-	 * Others
-	 ****/
-	
-	border: @et-button-orange-thin solid #FFF; 
-	margin-left: @et-button-orange-thin;
-	height: (@et-button-orange-height - (@et-button-orange-thin * 2));
-	
-	span.et-button-inner
-	{
-		display: inline-block;
-		height: (@et-button-orange-height - (@et-button-orange-thin * 2));
-		line-height: (@et-button-orange-height - (@et-button-orange-thin * 2));
-		padding: 0 0.5em;
-		/* Do not apply filter for ie
-		 * otherwise it will display alias
-		 * filter: e("progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=-1)"); 
-		 */
+    &:link
+    {
+        color: #FFF;
+    }
+    &:visited
+    {
+        color: #FFF;
+    }
+    &:active
+    {
+        color: #FFF;
+    }
+    &:hover
+    {
+        color: #FFF;
+        text-decoration: none;
+    }
+    .et-fs-dings
+    {
+        display: inline-block;
+        overflow: hidden;
+    }
+    @et-button-orange-thin: 0.083em;
+    @et-button-orange-thiner: 0.042em;
 
-		/* Define them twice because firefox 4 doesn't support negative value for width of shadow 
-		 * The second definition is for browsers who support it */
-		text-shadow: 0 (@et-button-orange-thiner * -1) (@et-button-orange-thin * 1) rgba(0, 0, 0, 0.4);
-		text-shadow: 0 (@et-button-orange-thiner * -1) (@et-button-orange-thin * -1) rgba(0, 0, 0, 0.4);
-		
-		span
-		{
-			padding: 0;
-			height: auto;
-			filter: none;
-			/* 
-			 * no line-height overwrite here
-			 * otherwise text cannot aligned to the middle
-			 *  */
-		}
-		
-		.et-button-cnt
-		{
-		}
-	}
-	
-	.et-fs-dings
-	{
-		vertical-align:middle;
-	}
+    .et-section-corner-top;
+    .et-section-corner-bottom;
+    /****
+     * Gradient Effect
+     ****/
+
+    /* Old browsers */
+    background: rgb(254,125,0);
+    /* FF3.6+ */
+    background: -moz-linear-gradient(top, rgba(254,125,0,1) 10%, rgba(206,62,9,1) 100%);
+    /* Chrome,Safari4+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(254,125,0,1)), color-stop(100%,rgba(206,62,9,1)));
+    /* Chrome10+,Safari5.1+ */
+    background: -webkit-linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%);
+    /* Opera11.10+ */
+    background: -o-linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%);
+    /* IE10+ */
+    background: -ms-linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%);
+    /* IE6-9 */
+    filter: e("progid:DXImageTransform.Microsoft.gradient( startColorstr='#FE7D00', endColorstr='#CE3E09',GradientType=0 ) progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=0)");
+    /* W3C */
+    background: linear-gradient(top, rgba(254,125,0,1) 10%,rgba(206,62,9,1) 100%);
+
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    -moz-background-clip: padding;
+
+    /****
+     * Shadow
+     ****/
+    @et-button-orange-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3), inset 0 0 4px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: @et-button-orange-box-shadow;
+    -moz-box-shadow: @et-button-orange-box-shadow;
+
+    /****
+     * Font
+     ****/
+    font-size: 24px;
+    font-family: Arial;
+    font-weight: bolder;
+
+
+    /****
+     * Others
+     ****/
+
+    border: @et-button-orange-thin solid #FFF;
+    margin-left: @et-button-orange-thin;
+    height: (@et-button-orange-height - (@et-button-orange-thin * 2));
+
+    span.et-button-inner
+    {
+        display: inline-block;
+        height: (@et-button-orange-height - (@et-button-orange-thin * 2));
+        line-height: (@et-button-orange-height - (@et-button-orange-thin * 2));
+        padding: 0 0.5em;
+        /* Do not apply filter for ie
+         * otherwise it will display alias
+         * filter: e("progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=-1)");
+         */
+
+        /* Define them twice because firefox 4 doesn't support negative value for width of shadow
+         * The second definition is for browsers who support it */
+        text-shadow: 0 (@et-button-orange-thiner * -1) (@et-button-orange-thin * 1) rgba(0, 0, 0, 0.4);
+        text-shadow: 0 (@et-button-orange-thiner * -1) (@et-button-orange-thin * -1) rgba(0, 0, 0, 0.4);
+
+        span
+        {
+            padding: 0;
+            height: auto;
+            filter: none;
+            /*
+             * no line-height overwrite here
+             * otherwise text cannot aligned to the middle
+             *  */
+        }
+
+        .et-button-cnt
+        {
+        }
+    }
+
+    .et-fs-dings
+    {
+        vertical-align:middle;
+    }
 }
 
 html.non-html5browser
 {
-	.et-button-orange
-	{
-		filter: none;
-		border: none; 
-		background: url(#CacheSvr#/_imgs/etui/legacy/common/buttons_orange.png) 100% -60em no-repeat;
-		padding-right: 0.76em;
-		zoom: 1;
-		height: @et-button-orange-height;
+    .et-button-orange
+    {
+        filter: none;
+        border: none;
+        background: url(#CacheSvr#/_imgs/etui/legacy/common/buttons_orange.png) 100% -60em no-repeat;
+        padding-right: 0.76em;
+        zoom: 1;
+        height: @et-button-orange-height;
 
-		.et-button-inner
-		{
-			height: @et-button-orange-height;
-			padding-right: 0;
-			background: url(#CacheSvr#/_imgs/etui/legacy/common/buttons_orange.png) 0 -60em no-repeat;
-			zoom: 1;
-			
-			span
-			{
-				height: auto;
-				margin: 0px;
-			}
-		}
-	}
+        .et-button-inner
+        {
+            height: @et-button-orange-height;
+            padding-right: 0;
+            background: url(#CacheSvr#/_imgs/etui/legacy/common/buttons_orange.png) 0 -60em no-repeat;
+            zoom: 1;
+
+            span
+            {
+                height: auto;
+                margin: 0px;
+            }
+        }
+    }
 }
 
 html.msie9
 {
-	.et-button-orange
-	{
-		filter: none;
-		overflow: hidden;
-		span
-		{
-			vertical-align: middle;
-			filter: e("progid:DXImageTransform.Microsoft.gradient( startColorstr='#FE7D00', endColorstr='#CE3E09',GradientType=0 ) progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=0)"); 
-			
-			span
-			{
-				vertical-align: middle;
-				filter: none;
-			}
-		}
-	}
-}
-.et-button-white
-{
-	color: #494f54;
-	background: transparent url(#CacheSvr#/_imgs/etui/legacy/common/buttons_white.png) right -60em no-repeat;
-	font-weight: bold;
-	padding-right: 22px;
-	.et-fs-dings
-	{
-		color: #fa7701;
-		font-size: 1.333em;
-		margin-right: -13px;
-	}
+    .et-button-orange
+    {
+        filter: none;
+        overflow: hidden;
+        span
+        {
+            vertical-align: middle;
+            filter: e("progid:DXImageTransform.Microsoft.gradient( startColorstr='#FE7D00', endColorstr='#CE3E09',GradientType=0 ) progid:DXImageTransform.Microsoft.DropShadow(color=#EEEEEE, offx=0, offy=0)");
 
-	span
-	{
-		display: inline-block;
-	}
+            span
+            {
+                vertical-align: middle;
+                filter: none;
+            }
+        }
+    }
+}
+/* we incorrectly ocuppied the class name button-white,
+ * but for future consistence we need to rename it to roundhead */
+.et-button-white, .et-button-white-roundhead
+{
+    color: #494f54;
+    background: transparent url(#CacheSvr#/_imgs/etui/legacy/common/buttons_white.png) right -60em no-repeat;
+    font-weight: bold;
+    padding-right: 22px;
+    .et-fs-dings
+    {
+        color: #fa7701;
+        font-size: 1.333em;
+        margin-right: -13px;
+    }
+
+    span
+    {
+        display: inline-block;
+    }
     &:link, &:visited, &:hover, &:active
     {
         text-decoration: none;
     }
     .et-button-inner
     {
-	    background: transparent url(#CacheSvr#/_imgs/etui/legacy/common/buttons_white.png) 0 -60em no-repeat;
-	    display: inline-block;
-	    line-height: 2em;
-	    padding-left: 30px;
-	    
-    	.et-button-cnt
-		{
-			margin-right: 20px;
-			display: inline;
-		}
+        background: transparent url(#CacheSvr#/_imgs/etui/legacy/common/buttons_white.png) 0 -60em no-repeat;
+        display: inline-block;
+        line-height: 2em;
+        padding-left: 30px;
+
+        .et-button-cnt
+        {
+            margin-right: 20px;
+            display: inline;
+        }
     }
 }
 
